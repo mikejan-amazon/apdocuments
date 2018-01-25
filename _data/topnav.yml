@@ -13,7 +13,7 @@ navbar_singleitems:
 navbar_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: Sample Menu
+    - title: Sample Menu!
       folderitems:
         - title: First item
           url: https://talk.jekyllrb.com
