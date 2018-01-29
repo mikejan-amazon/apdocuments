@@ -1,0 +1,79 @@
+
+folders:
+
+- title: Express Integration Guide
+  folderitems:
+  - title: Introduction to the Express integration guide
+    jurl: /hosted_introduction.html
+    ref: hosted_introduction
+
+    subfolders: 
+    - title: Button Generator integration
+      subfolderitems:
+      - title: Step 1. Use the Button Generator to create Amazon Pay Sandbox buttons
+        jurl: /hosted_.html
+        ref: 
+
+      - title: Step 2. Test your Amazon Pay buttons in Sandbox mode
+        jurl: /hosted_.html
+        ref:
+
+      - title: Step 3. Use the Button Generator to create Amazon Pay Production buttons
+        jurl: /hosted_.html
+        ref:
+
+      - title: Step 4. Test your Amazon Pay buttons in Production mode
+        jurl: /hosted_.html
+        ref:
+
+      - title: Step 5. Manage transactions
+        jurl: /hosted_.html
+        ref:
+
+    - title: Custom integration
+      subfolderitems:
+      - title: Step 1. Add the Amazon Pay JavaScript reference
+        jurl: /hosted_.html
+        ref: 
+
+      - title: Step 2. Build and create an Amazon Pay button
+        jurl: /hosted_.html
+        ref:
+
+      - title: Step 3. Specify the parameter values
+        jurl: /hosted_.html
+        ref:
+          
+      - title: Step 4. Collect the payment
+        jurl: /hosted_.html
+        ref:
+
+      - title: Step 5. Generate a signature for the payment request
+        jurl: /hosted_.html
+        ref: 
+
+      - title: Step 6. Integrate return URL parameters
+        jurl: /hosted_.html
+        ref:
+
+      - title: Step 7. Validate the signature (optional)
+        jurl: /hosted_.html
+        ref:
+          
+      - title: Step 8. Retrieve the shipping address
+        jurl: /hosted_.html
+        ref:
+
+      - title: Step 9. Test you integration in the sandbox environment and then switch to Production
+        jurl: /hosted_.html
+        ref:
+      
+
+  - title: Register with Amazon Pay
+    jurl: /hosted_register_with_amazon_pay.html
+    ref: hosted_register_with_amazon_pay
+
+  - title: Set up Amazon Pay Sandbox test account
+    jurl: /hosted_set_up_test_account.html
+    ref: hosted_set_up_test_account
+          

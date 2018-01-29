@@ -19,7 +19,7 @@ favicon: assets/favicon.ico
 use_logo: true
 
 # logo image to use. logo images are constrained at 50px in height.
-logo: assets/companylogo.png
+logo: images/logo.png
 
 # use text title instead. text title read from uistring.title in ui strings section.
 use_text_title: false
@@ -40,6 +40,7 @@ navbar-toggle: true
 
 # the links.html script requires you to list your sidebars here. this is if you're using managed links (see jekyllhowto-content-and-formatting.html#automatedlinks)
 sidebars:
+  - amazonpay
   - generic
   - jekyllhowto
 
@@ -49,7 +50,7 @@ link_type: jurl
 ############# FEEDBACK BUTTON #############
 
 # show feedback button in top nav bar?
-show_feedback: true
+show_feedback: false
 
 # email address feedback gets sent to
 feedback_email: someemail@gmail.com
@@ -60,16 +61,16 @@ feedback_email: someemail@gmail.com
 ############# GITHUB BUTTON #############
 
 # inserts github link in top nav bar (recommended)
-github_button_location_top_navbar: true
+github_button_location_top_navbar: false
 
 # inserts github link below page title
-github_button_location_below_title: false
+github_button_location_below_title: true
 
 # inserts github link at bottom of page (least visible)
 github_button_location_page_bottom: false
 
 # link to your github repo. replace <organization> (if applicable) and <repo name> and <branch name>. Note that the github link will be {{site.github_editme_path}}/{{page.path}}
-github_editme_path: https://github.com/<organization>/<repo name>/blob/<branch name>
+github_editme_path: https://github.com/mikejan-amazon/mikejan-amazon.github.io/blob/master/
 
 
 ############# EXCLUDE LIST #############
@@ -160,7 +161,7 @@ google_analytics_code:
 # you can modify the breadcrumb in _includes/breadcrumb.html
 
 # Display breadcrumbs at all?
-breadcrumb_display: true
+breadcrumb_display: false
 
 # Display Home path in breadcrumb?
 breadcrumb_home_display: true
@@ -197,9 +198,9 @@ collections:
 # Translate these for Japanese and German outputs.
 
 uistring:
-    title: Jekyll Doc Project theme # title to appear in nav bar and page meta
-    description: Description of the site # Displays as site description meta tag for site
-    copyright: 2017 Your Company, Inc. # appears in footer
+    title: Amazon Pay documentation # title to appear in nav bar and page meta
+    description: Amazon Pay documentation # Displays as site description meta tag for site
+    copyright: 2018 Amazon Payments, Inc. or its affiliates # appears in footer
     breadcrumb_home_name: Home # display name for "Home" path in the breadcrumb
     tableofcontents: Table of Contents # text that appears before in-page table of contents
     expandall: Expand All # appears as text in sidebar to expand all levels

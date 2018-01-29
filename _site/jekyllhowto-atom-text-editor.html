@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Atom Text Editor | Jekyll How-to Guide</title>
+    
+    <base>
+    <meta name="description" content="Atom is a free text editor that is a favorite tool of many writers because it is free. This page provides some tips for using Atom.  <a href="#customize-the-invisibles-and-tab-spacing-in-atom"... " >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- FontAwesome (GPL license) -->
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery (MIT license)-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- jQuery cookie (MIT license)-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- Navgoco (BSD license)-->
+    <script type="text/javascript" src="assets/js/jquery.navgoco.min.js"></script>
+    <!-- Bootstrap (MIT license)-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Anchor JS (MIT license)-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+        <script>
+        $( document ).ready(function() {
+            anchors.add('h2,h3,h4,h5');
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    
+
+    <script>
+        $( document ).ready(function() {
+            $("#docnavsidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'open', // open
+                save: true,
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 300,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', true);
+            });
+        });
+
+    </script>
+
+ <!-- For responsive button to toggle sidebar -->
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script>
+
+    <!-- User defined js -->
+    <script src="assets/js/main.js"></script>
+    <!--Bootstrap (MIT license) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/user_defined_web_styles.css" />
+    <style>
+        ul#markdown-toc::before  {
+        content: "Table of Contents"
+         }
+    </style>
+
+</head>
+<body class="default">
+<div class="page-container">
+
+
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+              
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="fa fa-bars fa-2x"></span>
+                </button>
+                
+                
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
+                
+
+
+                  
+  <div class="navbar-brand"><a class="noExtIcon" href="index.html"><img class="navbar-logo" src="images/logo.png"/></a></div>
+  
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+
+                    <!-- single item nav items appear here -->
+
+                    
+                    
+
+                          <!-- drop-down nav items appear here -->
+
+                    
+                    
+                    
+
+                    
+
+
+                </ul>
+                
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+
+                     <div id="search-topnav-container">
+                        <form action="search.html" method="get">
+                          <div class="input-group search">
+                            <input type="text" id="search-box" name="query" class="form-control" placeholder="Search ...">
+                            <div class="input-group-btn">
+                              <button class="btn btn-default" type="submit" value="search">
+                                <i class="glyphicon glyphicon-search"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+
+
+                    </li>
+                </ul>
+                
+            </div>
+
+        </div>
+
+
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+                
+<div class="mydocsidebar">
+
+
+<div class="sidebar-inner">
+
+
+  
+
+
+<div class="productTitle">Generic</div>
+<p class="external">
+    <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+</p>
+
+
+
+    <ul id="docnavsidebar" class="docnav">
+    
+    
+        
+    
+    <li class="level1"><a href="#">Theme Instructions</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="index.html">Getting Started</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-sidebar-navigation.html">Sidebar Navigation</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-content-and-formatting.html">Content and Formatting</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-pdf.html">Generate a PDF</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-troubleshooting.html">Troubleshooting</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+    
+    <li class="level1"><a href="#">General Jekyll Topics</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-install-jekyll-on-mac.html">Install Jekyll on Mac</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-install-jekyll-on-windows.html">Install Jekyll on Windows</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items open"><a href="jekyllhowto-atom-text-editor.html">Tips for Atom Text Editor</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources">Other Resources</div>
+<ul id="entrypages">
+        
+        <li><a class="noExtIcon" href="">Forums</a></li>
+        
+        <li><a class="noExtIcon" href="">Other Documentation</a></li>
+        
+        <li><a class="noExtIcon" href="">Support Portal</a></li>
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-9 main">
+
+                    <div class="subtitle">
+                    
+
+                      </div>
+
+                      
+
+
+                    <h1>Atom Text Editor</h1>
+
+                
+                <div class="githubFeedback"><span class="githubButton"><a target="_blank" href="https://github.com/mikejan-amazon/mikejan-amazon.github.io/blob/master//_docs/Jekyll Doc Project/General Jekyll Topics/jekyllhowto-atom-text-editor.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a></span></div>
+
+                
+                    <p>Atom is a free text editor that is a favorite tool of many writers because it is free. This page provides some tips for using Atom.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#customize-the-invisibles-and-tab-spacing-in-atom" id="markdown-toc-customize-the-invisibles-and-tab-spacing-in-atom">Customize the invisibles and tab spacing in Atom:</a></li>
+  <li><a href="#adjust-the-display-for-auto-complete" id="markdown-toc-adjust-the-display-for-auto-complete">Adjust the display for auto-complete</a></li>
+  <li><a href="#show-files-listed-in-gitignore" id="markdown-toc-show-files-listed-in-gitignore">Show files listed in .gitignore</a></li>
+  <li><a href="#atom-shortcuts" id="markdown-toc-atom-shortcuts">Atom Shortcuts</a></li>
+  <li><a href="#atom-snippets" id="markdown-toc-atom-snippets">Atom Snippets</a></li>
+  <li><a href="#use-snippets" id="markdown-toc-use-snippets">Use Snippets</a></li>
+</ul>
+
+<p>If you haven’t downloaded <a href="https://atom.io/">Atom</a>, download and install it. Use this as your editor when working with Jekyll. The syntax highlighting is probably the best among the available editors, as it was designed with Jekyll-authoring in mind. However, if you prefer Sublime Text, WebStorm, or some other editor, you can also use that.</p>
+
+<h2 id="customize-the-invisibles-and-tab-spacing-in-atom">Customize the invisibles and tab spacing in Atom:</h2>
+
+<ol>
+  <li>Go to <strong>Atom &gt; Preferences</strong>.</li>
+  <li>On the <strong>Settings</strong> tab, keep the default options but also select the following:
+    <ul>
+      <li><strong>Show Invisibles</strong></li>
+      <li><strong>Soft Wrap</strong></li>
+      <li>For the <strong>Tab Length</strong>, type <strong>4</strong>.</li>
+      <li>For the <strong>Tab Type</strong>, select <strong>soft</strong>.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="adjust-the-display-for-auto-complete">Adjust the display for auto-complete</h2>
+
+<p>If you don’t adjust the timing on the auto-complete, the constant prompts from the editor get annoying. At the same time, when you want the prompts, it’s extremely helpful to have this feature.</p>
+
+<ol>
+  <li>Go to <strong>Atom &gt; Preferences</strong>.</li>
+  <li>Click the <strong>Packages</strong> tab.</li>
+  <li>Search for <strong>autocomplete-plus</strong>.</li>
+  <li>In the <strong>Display Before Suggestions Shown</strong> box, type <strong>300</strong>.</li>
+  <li>In the <strong>Keymap for Confirming a Suggestion</strong> box, select <strong>tab and enter</strong>.</li>
+</ol>
+
+<h2 id="show-files-listed-in-gitignore">Show files listed in .gitignore</h2>
+
+<p>By default, files listed in .gitignore will be hidden from view in Atom. You can adjust this by doing the following:</p>
+
+<ol>
+  <li>Go to <strong>Atom &gt; Preferences</strong>.</li>
+  <li>Click the <strong>Packages</strong> tab.</li>
+  <li>Search for <strong>Tree View</strong> package.</li>
+  <li>Click <strong>Settings</strong>.</li>
+  <li>Clear the check box that says <strong>Hide VCS Ignored Files</strong>.</li>
+</ol>
+
+<h2 id="atom-shortcuts">Atom Shortcuts</h2>
+
+<ul>
+  <li><strong>Cmd + T</strong>: Find file</li>
+  <li><strong>Cmd + Shift + F</strong>: Find across project</li>
+  <li><strong>Cmd + Alt + S</strong>: Save all</li>
+</ul>
+
+<p>(For Windows, replace “Cmd” with “Ctrl”.)</p>
+
+<h2 id="atom-snippets">Atom Snippets</h2>
+
+<p>You can use a number of shortcuts with Atom. These shortcuts are entered as snippets. You have to enter these shortcuts manually in your Atom editor.</p>
+
+<h2 id="use-snippets">Use Snippets</h2>
+
+<p>Snippets expand stored text from a keyword shortcut. For example, if you type <strong>ximage</strong> and then press <strong>Enter</strong>, it expands to {% include image.html  file=”” max-width=”” border=””  url=”” caption=”” alt=”” %}  assuming you have this snippet configured.</p>
+
+<p>To configure snippets:</p>
+
+<ol>
+  <li>Copy the snippets file in <strong>assets/snippets.txt</strong>.</li>
+  <li>In Atom, go to <strong>Atom &gt; Snippets</strong>.</li>
+  <li>Replace the existing snippet contents with the content you pasted. Make sure your cursor is flush left before pasting the content.</li>
+</ol>
+
+<p>Here are the shortcuts:</p>
+
+<ul>
+  <li>xtoc</li>
+  <li>xfront</li>
+  <li>xcallout</li>
+  <li>xnote</li>
+  <li>xtip</li>
+  <li>xcaution</li>
+  <li>xwarning</li>
+  <li>xlinks</li>
+  <li>ximage</li>
+  <li>xinline_image</li>
+  <li>xaudio</li>
+  <li>xbookmark</li>
+  <li>xcomment</li>
+  <li>xcode</li>
+  <li>xnavtabs</li>
+  <li>xtable</li>
+</ul>
+
+<p>To insert the code from the snippet, type the shortcut and press <strong>Enter</strong>. Note that you have to be in a Markdown file for the snippets to work. The snippets are associated with Markdown files.</p>
+
+<p>If you have the “autocomplete plus” package turned on in Atom, you’ll see prompts when you enter this text. You can also add your own shortcuts to your snippets file by following the same format.</p>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+
+                  
+
+                    
+
+
+
+            </div>
+        </div><!--/.container-->
+
+
+    </div><!--/.page-container-->
+    <!-- * Bootsnipp footer: http://bootsnipp.com/snippets/1KEEq (MIT license) -->
+
+<div class="footertop">
+    <div class="container">
+        <div class="col-md-6">
+            <p></p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-6 footerleft ">
+
+
+              
+                        <div class="logofooter"> About Amazon Pay</div>
+                <p class="footer-description">2018 Amazon Payments, Inc. or its affiliates Amazon Payments, Inc. | 410 Terry Ave N | Seattle, Washington 98109-5210 Customer agreement and policies Transaction and account security  Privacy notice File a complaint Internet scams and phishing Money Transmitter License 
+</p>
+
+            </div>
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7">Amazon Pay</h6>
+                <ul class="footer-ul">
+                  
+                    <li><a class="noExtIcon" href="http://someurl1.com"> Press</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl2.com"> Support</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Contact Us</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Jobs</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</footer>
+<!--subfooter start from here -->
+
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            <p>© 2018 Amazon Payments, Inc. or its affiliates</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+
+</body>
+
+</html>

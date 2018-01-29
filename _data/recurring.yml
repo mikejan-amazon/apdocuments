@@ -1,0 +1,146 @@
+sidebarTitle: Amazon Pay with recurring payments integration guide
+
+## See the generic.yml file as an example of the allowed yaml format.
+
+folders:
+
+- title: Overview
+  folderitems:
+    - title: Introduction
+      jurl: /recurring_introduction.html
+      ref: recurring_introduction
+
+    - title: Overview of the integration
+      jurl: /recurring_overview.html
+      ref: recurring_overview
+
+    - title: Prerequisites
+      jurl: /recurring_prerequisite.html
+      ref: recurring_prerequisite
+
+- title: Integration Steps
+  folderitems:
+  - title: "Step 1: Add a Button widget for buyer authentication"
+    jurl: /recurring_add_button_widget.html
+    ref: recurring_add_button_widget
+
+  - title: "Step 2: Add the AddressBook and Wallet widgets"
+    jurl: /recurring_add_address_and_wallet_widgets.html
+    ref: recurring_add_address_and_wallet_widgets
+
+  - title: "Step 3: Obtain the buyer's authorization for recurring payments"
+    jurl: /recurring_obtain_authorization.html
+    ref: recurring_obtain_authorization
+
+  - title: "Step 4: Set billing agreement details and confirm the agreement"
+    jurl: /recurring_set_and_confirm_billing_agreement.html
+    ref: recurring_set_and_confirm_billing_agreement
+
+  - title: "Step 5: Validate the billing agreement"
+    jurl: /recurring_validate_billing_agreement.html
+    ref: recurring_validate_billing_agreement
+
+  - title: "Step 6: Request an authorization"
+    jurl: /recurring_request_authorization.html
+    ref: recurring_request_authorization
+
+  - title: "Step 7: Prepare to handle declined authorizations"
+    jurl: /recurring_prepare_declined_authorizations.html
+    ref: recurring_prepare_declined_authorizations
+      
+  - title: "Step 8: Request a capture"
+    jurl: /recurring_request_capture.html
+    ref: recurring_request_capture
+
+  - title: "Step 9: Request a refund"
+    jurl: /recurring_request_refund.html
+    ref: recurring_request_refund
+
+- title: Optional integration steps
+  folderitems:
+    - title: Obtain profile information
+      jurl: /recurring_obtain_profile_information.html
+      ref: recurring_obtain_profile_information
+
+    - title: Use redirect authentication experience
+      jurl: /recurring_redirect_experience.html
+      ref: recurring_redirect_experience
+
+    - title: Show the selected shipping address and payment method
+      jurl: /recurring_show_selected_options.html
+      ref: recurring_show_selected_options
+
+    - title: Integrating without the AddressBook widget
+      jurl: /recurring_no_addressbook.html
+      ref: recurring_no_addressbook
+
+    - title: Using the collapsible widgets for smartphones
+      jurl: /recurring_collapsible_widgets.html
+      ref: recurring_collapsible_widgets
+
+    - title: Synchronizing your systems with Amazon Pay
+      jurl: /recurring_schronize_systems.html
+      ref: recurring_schronize_systems
+
+    - title: Enabling advanced payment scenarios
+      jurl: /recurring_enable_advanced_scenarios.html
+      ref: recurring_enable_advanced_scenarios
+
+- title: Going live
+  folderitems:
+    - title: Testing your integration in the Sandbox environment
+      jurl: /recurring_testing_in_sandbox.html
+      ref: recurring_testing_in_sandbox
+
+    - title: Handling errors
+      jurl: /recurring_handling_errors.html
+      ref: recurring_handling_errors
+
+      subfolders:
+      - title: Batch processing
+        subfolderitems:
+        - title: Batch processing
+          jurl: /recurring_batch_processing.html
+          ref: recurring_batch_processing
+
+        - title: "Step 1: Create the feed content"
+          jurl: /recurring_create_feed.html
+          ref: recurring_create_feed
+
+        - title: "Step 2: Submit your feed content"
+          jurl: /recurring_submit_feed.html
+          ref: recurring_submit_feed
+
+        - title: "Step 3: Check for processing status"
+          jurl: /recurring_check_processing_status.html
+          ref: recurring_check_processing_status
+
+        - title: "Step 4: Process IPN messages"
+          jurl: /recurring_process_ipn_messages.html
+          ref: recurring_process_ipn_messages
+
+        - title: "Step 5: Request a processing report"
+          jurl: /recurring_request_processing_report.html
+          ref: recurring_request_processing_report
+
+        - title: "Step 6: Reconcile your feed with your processing report"
+          jurl: /recurring_reconcile_feed.html
+          ref: recurring_reconcile_feed
+
+- title: Appendix
+  folderitems:
+    - title: Synchronous and asynchronous modes of the AuthorizeOnBillingAgreement operation
+      jurl: /recurring_sync_modes.html
+      ref: recurring_sync_modes
+
+    - title: Buyer-facing email content that you can provide
+      jurl: /recurring_custom_email_content.html
+      ref: recurring_custom_email_content
+
+    - title: Button gallery
+      jurl: /recurring_button_gallery.html
+      ref: recurring_button_gallery
+
+    - title: Style guidelines
+      jurl: /recurring_style_guidelines.html
+      ref: recurring_style_guidelines

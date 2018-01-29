@@ -1,212 +1,172 @@
 ---
-title: "Jekyll Doc Project: A Jekyll theme for documentation"
+title: "Step 3: Add a button widget"
 permalink: index.html
-sidebar: jekyllhowto
+sidebar: one_time
 type: homepage
 class: first
 custom_breadcrumb: Getting Started
 
 ---
 
-The Jekyll Doc Project theme is intended for technical documentation projects, such as user guides for software, hardware, and APIs. This Jekyll theme (which has an Apache 2.0 open source license) uses pages exclusively and features robust multi-level navigation. It includes both web and PDF output. The GitHub repo is here: [amzn/jekyll-theme-doc-project](https://github.com/amzn/jekyll-theme-doc-project).
+The Amazon Pay and Login with Amazon product consists of the Amazon Pay and the Login with Amazon services, which are technically closely related and run on the same platform.
+
+* Amazon Pay is a checkout option that lets the buyer choose a shipping address and payment method that is stored in their Amazon user account.
+* Login with Amazon encourages your buyer to sign in using their Amazon login credentials when they arrive on your home page.
+
+When the buyer successfully signs in to Amazon, an access token is returned. The access token is specific to your client and buyer and the type of profile data you are requesting. You will need the access token to retrieve customer profile data.
 
 * TOC
 {:toc}
 
-## Installation
+## Procedure
 
-Before you can install the project, you may need to install Jekyll.
+Note: You must encode your data before processing. We recommend that you encode any data that you receive from us before outputting it in any form, like HTML, JavaScript, or in a URL. Output encoding ensures that malicious scripts or any other injected executable cannot be executed on your website. For additional details, see "Encode your data before processing" in the JavaScript section.
 
-1.  Install Jekyll:
-    * [Install Jekyll on Mac][jekyllhowto-install-jekyll-on-mac]
-    * [Install Jekyll on Windows][jekyllhowto-install-jekyll-on-windows]
+Follow the steps below to add a button widget for buyer authentication. Do the steps in the order presented. In particular, you must not add the widgets.js script (step 2) before completing step 1. A complete code sample is offered at the end of this topic.
 
-    You can check if you already have Jekyll installed by running `jekyll -v`. If you don't have the latest version, run `gem update jekyll`.
+Add callback for onAmazonLoginReady and onAmazonPaymentsReady to the <head> section of any page where you want the button to appear. The onAmazonPaymentsReady callback will render the button.
 
-2.  Download the theme from the [amzn/jekyll-theme-doc-project](https://github.com/amzn/jekyll-theme-doc-project) repo.
-3.  Configure the values in the **\_config.yml** file based on the inline code comments in that file.
-4.  Serve or build the Jekyll site:
-
-    ```
-    jekyll serve
-    ```
-
-## Overwriting Theme Files
-
-You'll most likely want to add some of your own styles, esp. to style the top navigation bar and other elements. There are three files specifically set up for this:
-
-* **assets/css/pdf/user_defined_web_styles.css** (web styles)
-* **assets/css/pdf/user_defined_pdf_styles.css** (print styles)
-* **assets/js/user_defined_javascript.js** (web javascript)
-
-These files are blank but are referenced in the theme's layout files. By adding these files in your project and defining your styles, they will automatically be included in the layout.
-
-## Content Types
-
-This theme uses collections exclusively (instead of posts). Collections are a content type, like a page or post. In this case, the content type is a document within the "docs" folder. Documents function just like pages, for the most part. (When referring to them in this documentation,  "pages" and "documents" are used interchangeably.) Organize your pages inside the **\_docs** folder.
-
-Organize your pages with the folder structure that you want displayed in the [breadcrumb](#breadcrumbsection). Use the spacing and capitalization in your folder names that you want reflected in your breadcrumb path. For example, "Getting Started" instead of "getting_started".
-
-The folder structure informs the breadcrumb display only. Upon build, the site output will pull all of the pages out of their folders, subfolders, etc., and put them into the root directory of \_site. This "flattening" of the page hierarchy enables relative linking in the project. Relative links allow you to view the built site offline or to push it from one environment or directory structure to the next without worrying about valid paths to theme assets or other links.
-
-## Breadcrumbs {#breadcrumbsection}
-
-If you want breadcrumbs in your project, set these properties in the \_config.yml file:
-
-```yaml
-# Display breadcrumbs at all?
-breadcrumb_display: true
-
-# Display Home path in breadcrumb?
-breadcrumb_home_display: true
-
-# Url for Home path to point to
-breadcrumb_home_url: http://yourcompanysite.com
-
-# Display name for "Home" path
-breadcrumb_home_name: Home
+``` 
+<head>
+  <script type='text/javascript'>
+    window.onAmazonLoginReady = function() {
+      amazon.Login.setClientId('CLIENT-ID');
+    };
+    window.onAmazonPaymentsReady = function() {
+                showButton();
+    };
+  </script>
+</head>
 ```
 
-Jekyll projects require an index.html (or index.md) file in your root directory. This is the page that loads by default. Because this page lives outside your regular \_docs directory, you have to manually define the breadcrumb path (after Home) that you want there.
-
-Note that clicking the folder paths in the breadcrumb doesn't do anything except for Home. Visually, all paths look the same, but no logic is configured to dynamically render a list of items contained in file path folders.
-
-
-## Images
-
-You can store your images either inside or outside your project. In both cases, use the [image include][jekyllhowto-content-and-formatting#images_section] to insert images in your pages.
-
-### Storing Images Inside the Project
-
-If you want to store your images inside your Jekyll project, store the images in the \_docs/images folder. In the \_config.yml file, set the image path that will be prepended to the image file name. By default, the output will show the images in the same folder structure as you have in your Jekyll project source directory. If you put your images in **\/images**, then when your Jekyll site builds, your images will be in **\/images**. Rather than writing **images/myfile.png** in the `file` parameter of the image include, you can put the image path in the config file's `image_path` parameter:
+For more information, see "Adding callback and widget.js code to your web pages" in the JavaScript section.
+Add the widget.js file below the callback functions.
 
 ```
-image_path: images
+<head>
+  <script type='text/javascript'>
+    window.onAmazonLoginReady = function() {
+      amazon.Login.setClientId('CLIENT-ID');
+    };
+    window.onAmazonPaymentsReady = function() {
+                showButton();
+    };
+  </script>
+
+  <script async="async" src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'>
+  </script>
+</head>
 ```
 
-This path will be prepended before image file names. (Note that a trailing slash is added automatically in the image include.)
-
-This way, when you use the image include to insert images, you can simply write **myfile.png** for the `file` parameter.
-
-### Storing Images Outside Your Project
-
-Sometimes you might want to store your images outside your Jekyll build. Git repos don't handle large numbers of images well (your .git files become huge), since images are binaries. If you want to store images outside your project, open **.gitignore** and add **images** to it.
-
-
-In the `image_path` property in the \_config.yml file, define the path where the images will be available:
+The script tag in the sample above contains an async attribute that allows the web page to load more quickly while the JavaScript code required by Amazon Pay is loaded in the background. This is the only asynchronous method supported by Amazon Pay.
+Add the button code to the body of your web page by adding JavaScript code in the <body> of every page where you want the button to appear.
 
 ```
-image_path: https://s3-us-west-1.amazonaws.com/my-bucket-name/my-project-images
+ <div id="AmazonPayButton">
+ </div>
+  ...
+ <script type="text/javascript">
+    function showButton(){
+      var authRequest; 
+      OffAmazonPayments.Button("AmazonPayButton", "SELLER-ID", { 
+        type:  "TYPE", 
+        color: "COLOR", 
+        size:  "SIZE", 
+
+        authorization: function() { 
+        loginOptions = {scope: "SCOPES", 
+          popup: "POPUP-PARAMETER"}; 
+        authRequest = amazon.Login.authorize (loginOptions, 
+          "REDIRECT-URL"); 
+        } 
+  }); 
+</script>
 ```
 
-If you're using AWS S3, you can transfer images to your server from the command line. See [AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-install-macos.html) for details. After installing the aws cli, you'll need to [configure your credentials](http://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html) and determine the right [commands to transfer files](http://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html) to your bucket.
-
-Within your Jekyll project, you could add a shell script that contains the command needed to transfer files to your bucket, like this:
-
-```
-aws s3 sync images s3://my-bucket-name/my-project-images
-```
-
-The images_upload.sh contains this generic AWS CLI command. The S3 bucket will store the images in a structure like this:
+The code sample above shows parameters that you can replace with your own values. For more information, see Button widget parameters.
+Add error handling to the button code.
 
 ```
-my-bucket-name > my-project-images > image1.png
-
-├── my-bucket-name
-│   ├── my-project-images
-│      ├── image1.png
+. . .
+onError: function(error) { 
+  // your error handling code.
+  // alert("The following error occurred: " 
+  //        + error.getErrorCode() 
+  //        + ' - ' + error.getErrorMessage());
+} 
+. . .
 ```
 
-## Frontmatter
-
-Make sure each page has frontmatter at the top like this:
-
-```yaml
----
-title: "Sample 1: The Beginning"
-permalink: sample.html
-sidebar: generic
-product: Generic Product
----
-```
-
-(Even if it's a Markdown file, the `permalink` property should specify the .html extension, since this is how the file will appear in the output.)
-
-<table>
-   <colgroup>
-      <col width="30%" />
-      <col width="70%" />
-   </colgroup>
-   <thead>
-      <tr>
-         <th markdown="span">Property</th>
-         <th markdown="span">Description</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td markdown="span">title</td>
-         <td markdown="span">The title for the page. If you want to use a colon in your page title, you must enclose the title’s value in quotation marks. Note that titles in your pages' frontmatter are not synced with the titles in your sidebar data file. If you change it in one place, remember to change it in the other too.</td>
-      </tr>
-      <tr>
-         <td markdown="span">permalink</td>
-         <td markdown="span">Use the same name as your file name, but use ".html" instead of ".md" in the permalink property. Do not put forward slashes around the permalink (this makes Jekyll put the file inside a folder in the output). When Jekyll builds the site, it will put the page into the root directory rather than leaving it in a subdirectory or putting it inside a folder and naming the file index.html. </td>
-      </tr>
-      <tr>
-         <td markdown="span">sidebar</td>
-         <td markdown="span">The name of the sidebar that this page should use (don't include ".yml" in the name). </td>
-      </tr>
-      <tr>
-         <td markdown="span">product</td>
-         <td markdown="span">The product for this content. This appears in search and could be used in integrations with more robust search services.</td>
-      </tr>
-   </tbody>
-</table>
-
-{% include tip.html content="You can store the `sidebar` and `product` frontmatter as defaults in your project's \_config.yml file." %}
+For more information about the onError handler, see Handling errors from Amazon Pay widgets.
+Add a logout option.
 
 ```
-defaults:
-
-  -
-    scope:
-      path: ""
-      type: docs/myproject
-    values:
-      product: My Project
-      sidebar: myprojectsidebar
+<script type="text/javascript">
+  document.getElementById('Logout').onclick = function() {
+    amazon.Login.logout();
+  };
+</script>
 ```
 
-In this example, all documents in the \_docs/myproject file will automatically have `product: My Project` and `sidebar: myprojectsidebar` as values in the frontmatter when the site builds.
+The logout option, often set up as a link, should delete any cached tokens and remove the user's profile information, like their name, from your website. Then your website can present the login button again. Call the amazon.Login.logout() method to delete any cached tokens and clear the session created by Amazon. Subsequent calls to amazon.Login.authorize will present the login screen by default.
 
-## Sidebar Configuration
 
-To configure the sidebar, copy the format shown in \_data/generic.yml into a new sidebar file. (Keep generic.yml as an example in your project, because YAML syntax can be picky and sometimes frustrating to get right. Generic.yml shows an example of content at every level.)
 
-Each of your pages should reference the appropriate sidebar either in the page's frontmatter or as defined in the defaults in your \_config.yml file. See [Sidebar Navigation][jekyllhowto-sidebar-navigation] for more details.
+## Complete code sample
 
-## Top Navigation Bar
-
-You configure the top navigation bar through the \_data/topnav.yml file. You can configure single links or links with drop downs. If you want the search to appear in the sidebar rather than the top nav, see these options in the \_config.yml file:
-
-```yaml
-search_in_topnav: true
-search_in_sidebar: false
 ```
 
-Placing the search in the top navigation bar gives the theme more visual balance.
+<head>
+  <script type='text/javascript'>
+    window.onAmazonLoginReady = function() {
+      amazon.Login.setClientId('CLIENT-ID');
+    };
+    window.onAmazonPaymentsReady = function() {
+                showButton();
+    };
+  </script>
+    <script async="async" src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'>
+  </script>
+</head>
 
-When you shrink the browser size, the navbar options change to a couple of icons. You can control whether those icons appear with these settings in \_config.yml:
+<body>
+. . .
+ <div id="AmazonPayButton">
+ </div>
+  ...
+ <script type="text/javascript">
+    function showButton(){
+      var authRequest; 
+      OffAmazonPayments.Button("AmazonPayButton", "SELLER-ID", { 
+        type:  "TYPE", 
+        color: "COLOR", 
+        size:  "SIZE", 
 
-```yaml
-toggle-sidebar-button: none
-navbar-toggle: none
+        authorization: function() { 
+        loginOptions = {scope: "SCOPES", 
+          popup: "POPUP-PARAMETER"}; 
+        authRequest = amazon.Login.authorize (loginOptions, 
+          "REDIRECT-URL"); 
+        }, 
+ 
+        onError: function(error) { 
+          // your error handling code.
+          // alert("The following error occurred: " 
+          //        + error.getErrorCode() 
+          //        + ' - ' + error.getErrorMessage());
+        } 
+     });
+    }; 
+   </script>
+   . . .
+   <script type="text/javascript">
+     document.getElementById('Logout').onclick = function() {
+       amazon.Login.logout();
+     };
+   </script>
+
+</body>
 ```
 
-(You might want to hide these buttons if your nav bar doesn't have any links or options, or if the sidebar is empty.)
 
-## Configure the Footer
 
-You configure the footer through the options in \_data/footer.yml.
-
-{% include links.html %}

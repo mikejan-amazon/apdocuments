@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Formatting test | Jekyll How-to Guide</title>
+    
+    <base>
+    <meta name="description" content=" This page covers all the details you need to know about content and formatting, including topics such as page directories, links, alerts,... " >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- FontAwesome (GPL license) -->
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery (MIT license)-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- jQuery cookie (MIT license)-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- Navgoco (BSD license)-->
+    <script type="text/javascript" src="assets/js/jquery.navgoco.min.js"></script>
+    <!-- Bootstrap (MIT license)-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Anchor JS (MIT license)-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+        <script>
+        $( document ).ready(function() {
+            anchors.add('h2,h3,h4,h5');
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    
+
+    <script>
+        $( document ).ready(function() {
+            $("#docnavsidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'open', // open
+                save: true,
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 300,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', true);
+            });
+        });
+
+    </script>
+
+ <!-- For responsive button to toggle sidebar -->
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script>
+
+    <!-- User defined js -->
+    <script src="assets/js/main.js"></script>
+    <!--Bootstrap (MIT license) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/user_defined_web_styles.css" />
+    <style>
+        ul#markdown-toc::before  {
+        content: "Table of Contents"
+         }
+    </style>
+
+</head>
+<body class="default">
+<div class="page-container">
+
+
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+              
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="fa fa-bars fa-2x"></span>
+                </button>
+                
+                
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
+                
+
+
+                  
+  <div class="navbar-brand"><a class="noExtIcon" href="index.html"><img class="navbar-logo" src="images/logo.png"/></a></div>
+  
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+
+                    <!-- single item nav items appear here -->
+
+                    
+                    
+
+                          <!-- drop-down nav items appear here -->
+
+                    
+                    
+                    
+
+                    
+
+
+                </ul>
+                
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+
+                     <div id="search-topnav-container">
+                        <form action="search.html" method="get">
+                          <div class="input-group search">
+                            <input type="text" id="search-box" name="query" class="form-control" placeholder="Search ...">
+                            <div class="input-group-btn">
+                              <button class="btn btn-default" type="submit" value="search">
+                                <i class="glyphicon glyphicon-search"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+
+
+                    </li>
+                </ul>
+                
+            </div>
+
+        </div>
+
+
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+                
+<div class="mydocsidebar">
+
+
+<div class="sidebar-inner">
+
+
+  
+
+
+<div class="productTitle">Generic</div>
+<p class="external">
+    <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+</p>
+
+
+
+    <ul id="docnavsidebar" class="docnav">
+    
+    
+        
+    
+    <li class="level1"><a href="#">Theme Instructions</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="index.html">Getting Started</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-sidebar-navigation.html">Sidebar Navigation</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-content-and-formatting.html">Content and Formatting</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-pdf.html">Generate a PDF</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-troubleshooting.html">Troubleshooting</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+    
+    <li class="level1"><a href="#">General Jekyll Topics</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-install-jekyll-on-mac.html">Install Jekyll on Mac</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-install-jekyll-on-windows.html">Install Jekyll on Windows</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-atom-text-editor.html">Tips for Atom Text Editor</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources">Other Resources</div>
+<ul id="entrypages">
+        
+        <li><a class="noExtIcon" href="">Forums</a></li>
+        
+        <li><a class="noExtIcon" href="">Other Documentation</a></li>
+        
+        <li><a class="noExtIcon" href="">Support Portal</a></li>
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-9 main">
+
+                    <div class="subtitle">
+                    
+
+                      </div>
+
+                      
+
+
+                    <h1>Formatting test</h1>
+
+                
+                <div class="githubFeedback"><span class="githubButton"><a target="_blank" href="https://github.com/mikejan-amazon/mikejan-amazon.github.io/blob/master//_docs/Jekyll Doc Project/Theme Instructions/formattingtest.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a></span></div>
+
+                
+                    <style>
+body {
+  padding:30px;
+  max-width: 800px;
+}
+</style>
+
+<p>This page covers all the details you need to know about content and formatting, including topics such as page directories, links, alerts, images, and more.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<p>This is the table of contents for the page:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li>
+  <li><a href="#paragraphs" id="markdown-toc-paragraphs">Paragraphs</a></li>
+  <li><a href="#heading-level-1" id="markdown-toc-heading-level-1">Heading level 1</a>    <ul>
+      <li><a href="#heading-level-2" id="markdown-toc-heading-level-2">Heading level 2</a>        <ul>
+          <li><a href="#heading-level-3" id="markdown-toc-heading-level-3">Heading level 3</a>            <ul>
+              <li><a href="#heading-level-4" id="markdown-toc-heading-level-4">Heading level 4</a>                <ul>
+                  <li><a href="#heading-level-5" id="markdown-toc-heading-level-5">Heading level 5</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#bold-content" id="markdown-toc-bold-content">Bold content</a></li>
+      <li><a href="#italics" id="markdown-toc-italics">Italics</a></li>
+      <li><a href="#inline-code" id="markdown-toc-inline-code">Inline Code</a></li>
+      <li><a href="#code-blocks" id="markdown-toc-code-blocks">Code blocks</a></li>
+      <li><a href="#bulleted-lists" id="markdown-toc-bulleted-lists">Bulleted Lists</a></li>
+      <li><a href="#numbered-list" id="markdown-toc-numbered-list">Numbered list</a></li>
+      <li><a href="#list-with-sub-items" id="markdown-toc-list-with-sub-items">List with sub-items</a></li>
+      <li><a href="#list-with-intercepting-text" id="markdown-toc-list-with-intercepting-text">List with intercepting text</a>        <ul>
+          <li><a href="#image" id="markdown-toc-image">Image</a></li>
+        </ul>
+      </li>
+      <li><a href="#alerts" id="markdown-toc-alerts">Alerts</a></li>
+      <li><a href="#callouts" id="markdown-toc-callouts">Callouts</a></li>
+      <li><a href="#links" id="markdown-toc-links">Links</a></li>
+      <li><a href="#audio-embed" id="markdown-toc-audio-embed">Audio embed</a></li>
+      <li><a href="#video-embed" id="markdown-toc-video-embed">Video embed</a></li>
+      <li><a href="#markdown-table" id="markdown-toc-markdown-table">Markdown Table</a></li>
+      <li><a href="#html-tables" id="markdown-toc-html-tables">HTML Tables</a></li>
+      <li><a href="#edit-on-github-button" id="markdown-toc-edit-on-github-button">Edit on GitHub button</a></li>
+      <li><a href="#definition-lists" id="markdown-toc-definition-lists">Definition lists</a></li>
+      <li><a href="#glossary-page" id="markdown-toc-glossary-page">Glossary page</a></li>
+      <li><a href="#tooltips" id="markdown-toc-tooltips">Tooltips</a></li>
+      <li><a href="#buttons" id="markdown-toc-buttons">Buttons</a></li>
+      <li><a href="#horizontal-line" id="markdown-toc-horizontal-line">Horizontal line</a></li>
+      <li><a href="#small-font" id="markdown-toc-small-font">Small font</a></li>
+      <li><a href="#navtabs" id="markdown-toc-navtabs">Navtabs</a></li>
+      <li><a href="#progress-bar" id="markdown-toc-progress-bar">Progress Bar</a></li>
+      <li><a href="#labels" id="markdown-toc-labels">Labels</a></li>
+    </ul>
+  </li>
+  <li><a href="#breadcrumbs" id="markdown-toc-breadcrumbs">breadcrumbs</a></li>
+</ul>
+
+<h2 id="paragraphs">Paragraphs</h2>
+
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+<h1 id="heading-level-1">Heading level 1</h1>
+
+<p>this is some body content.</p>
+
+<h2 id="heading-level-2">Heading level 2</h2>
+
+<p>this is some body content.</p>
+
+<h3 id="heading-level-3">Heading level 3</h3>
+
+<p>this is some body content.</p>
+
+<h4 id="heading-level-4">Heading level 4</h4>
+
+<p>this is some body content.</p>
+
+<h5 id="heading-level-5">Heading level 5</h5>
+
+<p>this is some body content.</p>
+
+<h2 id="bold-content">Bold content</h2>
+
+<p>This is a <strong>bold</strong> word.</p>
+
+<h2 id="italics">Italics</h2>
+
+<p>This is an <em>italic</em> word.</p>
+
+<h2 id="inline-code">Inline Code</h2>
+
+<p>This is some <code class="highlighter-rouge">inline code</code> in a sentence.</p>
+
+<h2 id="code-blocks">Code blocks</h2>
+
+<p>This is a code block:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My File Name</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">myfile.html</span>
+<span class="na">sidebar</span><span class="pi">:</span> <span class="s">mysidebar</span>
+<span class="na">product</span><span class="pi">:</span> <span class="s">My Product</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>This is a code block with <code class="highlighter-rouge">pre</code> tags:</p>
+
+<pre>
+- title: Sample Topic
+  jurl: /sample.html
+  hurl: /solutions/devices/product/docs/sample
+  <span class="red">ref: sample</span>
+</pre>
+
+<h2 id="bulleted-lists">Bulleted Lists</h2>
+
+<p>This is a bulleted list:</p>
+
+<ul>
+  <li>first item</li>
+  <li>second item</li>
+  <li>third item</li>
+</ul>
+
+<h2 id="numbered-list">Numbered list</h2>
+
+<p>This is a simple numbered list:</p>
+
+<ol>
+  <li>First item. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from “de Finibus Bonorum et Malorum” by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</li>
+  <li>Second item. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from “de Finibus Bonorum et Malorum” by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</li>
+  <li>Third item. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from “de Finibus Bonorum et Malorum” by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</li>
+</ol>
+
+<h2 id="list-with-sub-items">List with sub-items</h2>
+
+<p>Here’s a more complex list:</p>
+
+<ol>
+  <li>
+    <p>Sample first item. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from “de Finibus Bonorum et Malorum” by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+
+    <ul>
+      <li>sub-bullet one. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</li>
+      <li>sub-bullet two. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Continuing the list. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable.</p>
+
+    <ol>
+      <li>sub-list numbered one. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</li>
+      <li>sub-list numbered two. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</li>
+    </ol>
+  </li>
+  <li>
+    <p>Another list item. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable.</p>
+  </li>
+</ol>
+
+<h2 id="list-with-intercepting-text">List with intercepting text</h2>
+
+<p>Here’s a list with some intercepting text:</p>
+
+<ol>
+  <li>
+    <p>Sample first item. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable.</p>
+
+    <p>This is a result statement that talks about something….All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+  </li>
+  <li>
+    <p>Continuing the list. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is a sample note. If you have “quotes”, you must escape them.</div>
+
+    <p>Here’s a list in here:</p>
+
+    <ul>
+      <li>first item. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</li>
+      <li>second item. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Another list item. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>
+  </li>
+  <li>
+    <p>Another item.The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>
+  </li>
+</ol>
+
+<h3 id="image">Image</h3>
+
+<p>Here’s an image with a caption and other parameters.</p>
+
+<figure><a class="noExtIcon" target="_blank" href="http://developer.company.com"><img style="max-width: 90%" class="docimage border" src="images/company_logo.png" alt="My alternative image text" /></a><figcaption>This is my caption</figcaption></figure>
+
+<h2 id="alerts">Alerts</h2>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Nullam semper, leo at venenatis blandit, diam augue imperdiet tellus, at ultricies augue massa ut mi. Vestibulum quis lorem a tellus suscipit efficitur a nec arcu. Maecenas commodo ac ipsum sed sagittis. Fusce facilisis quis mi eget aliquam. Nam mollis ac nisl vitae venenatis. Donec in cursus eros. </div>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Nullam semper, leo at venenatis blandit, diam augue imperdiet tellus, at ultricies augue massa ut mi. Vestibulum quis lorem a tellus suscipit efficitur a nec arcu. Maecenas commodo ac ipsum sed sagittis. Fusce facilisis quis mi eget aliquam. Nam mollis ac nisl vitae venenatis. Donec in cursus eros.</div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Nullam semper, leo at venenatis blandit, diam augue imperdiet tellus, at ultricies augue massa ut mi. Vestibulum quis lorem a tellus suscipit efficitur a nec arcu. Maecenas commodo ac ipsum sed sagittis. Fusce facilisis quis mi eget aliquam. Nam mollis ac nisl vitae venenatis. Donec in cursus eros.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Nullam semper, leo at venenatis blandit, diam augue imperdiet tellus, at ultricies augue massa ut mi. Vestibulum quis lorem a tellus suscipit efficitur a nec arcu. Maecenas commodo ac ipsum sed sagittis. Fusce facilisis quis mi eget aliquam. Nam mollis ac nisl vitae venenatis. Donec in cursus eros.</div>
+
+<h2 id="callouts">Callouts</h2>
+
+<div class="bs-callout bs-callout-info"><span class="calloutTitle">Sample Callout</span><br /><br />Pellentesque egestas, risus a suscipit tempus, mauris lectus sodales massa, sit amet rutrum est nisi sit amet libero. Ut lobortis, velit non feugiat volutpat, lectus sapien imperdiet quam, quis iaculis metus neque vitae elit. Vivamus tempus a tellus eget scelerisque. Sed nec velit massa. Quisque mattis ex et diam fringilla, vel molestie massa dictum. Ut ut accumsan nibh.</div>
+
+<div class="bs-callout bs-callout-success"><span class="calloutTitle">Sample Callout</span><br /><br />Pellentesque egestas, risus a suscipit tempus, mauris lectus sodales massa, sit amet rutrum est nisi sit amet libero. Ut lobortis, velit non feugiat volutpat, lectus sapien imperdiet quam, quis iaculis metus neque vitae elit. Vivamus tempus a tellus eget scelerisque. Sed nec velit massa. Quisque mattis ex et diam fringilla, vel molestie massa dictum. Ut ut accumsan nibh.</div>
+
+<div class="bs-callout bs-callout-danger"><span class="calloutTitle">Sample Callout</span><br /><br />Pellentesque egestas, risus a suscipit tempus, mauris lectus sodales massa, sit amet rutrum est nisi sit amet libero. Ut lobortis, velit non feugiat volutpat, lectus sapien imperdiet quam, quis iaculis metus neque vitae elit. Vivamus tempus a tellus eget scelerisque. Sed nec velit massa. Quisque mattis ex et diam fringilla, vel molestie massa dictum. Ut ut accumsan nibh.</div>
+
+<div class="bs-callout bs-callout-warning"><span class="calloutTitle">Sample Callout</span><br /><br />Pellentesque egestas, risus a suscipit tempus, mauris lectus sodales massa, sit amet rutrum est nisi sit amet libero. Ut lobortis, velit non feugiat volutpat, lectus sapien imperdiet quam, quis iaculis metus neque vitae elit. Vivamus tempus a tellus eget scelerisque. Sed nec velit massa. Quisque mattis ex et diam fringilla, vel molestie massa dictum. Ut ut accumsan nibh.</div>
+
+<div class="bs-callout bs-callout-primary"><span class="calloutTitle">Sample Callout</span><br /><br />Pellentesque egestas, risus a suscipit tempus, mauris lectus sodales massa, sit amet rutrum est nisi sit amet libero. Ut lobortis, velit non feugiat volutpat, lectus sapien imperdiet quam, quis iaculis metus neque vitae elit. Vivamus tempus a tellus eget scelerisque. Sed nec velit massa. Quisque mattis ex et diam fringilla, vel molestie massa dictum. Ut ut accumsan nibh.</div>
+
+<div class="bs-callout bs-callout-danger"><span class="calloutTitle">Sample Callout</span><br /><br />Pellentesque egestas, risus a suscipit tempus, mauris lectus sodales massa, sit amet rutrum est nisi sit amet libero. Ut lobortis, velit non feugiat volutpat, lectus sapien imperdiet quam, quis iaculis metus neque vitae elit. Vivamus tempus a tellus eget scelerisque. Sed nec velit massa. Quisque mattis ex et diam fringilla, vel molestie massa dictum. Ut ut accumsan nibh.</div>
+
+<h2 id="links">Links</h2>
+
+<p>This is a link to <a href="http://amazon.com">Amazon</a>.</p>
+
+<p>And a jump link to <a href="#alerts">the Alerts section</a>.</p>
+
+<h2 id="audio-embed">Audio embed</h2>
+
+<audio controls="">
+  <source src="" type="audio/ogg" />
+  <source src="" type="audio/mpeg" />
+Your browser does not support the audio element.
+</audio>
+
+<h2 id="video-embed">Video embed</h2>
+
+<video width="700" controls="">
+<source src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/firetv/amazoncreator/amazon-creator-virtual-remote3._V507863494_.mp4" type="video/mp4" />
+Your browser does not support HTML5 video.
+</video>
+
+<h2 id="markdown-table">Markdown Table</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priority apples</th>
+      <th>Second priority</th>
+      <th>Third priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ambrosia</td>
+      <td>gala</td>
+      <td>red delicious</td>
+    </tr>
+    <tr>
+      <td>pink lady</td>
+      <td>jazz</td>
+      <td>macintosh</td>
+    </tr>
+    <tr>
+      <td>honeycrisp</td>
+      <td>granny smith</td>
+      <td>fuji</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="html-tables">HTML Tables</h2>
+
+<table>
+<colgroup>
+<col width="60%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>To create…</th>
+<th>Use this skill type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+A skill that can handle just about any type of request.
+
+For example:
+
+- Look up information from a web service
+- Integrate with a web service to order something (order a car from Uber, order a pizza from Domino’s Pizza)
+- Interactive games
+- Just about anything else you can think of
+</td>
+<td>
+Custom skill (<em>custom interaction model</em>)
+See <a href="sample3.html">Sample 3</a>
+…(more content…)
+</td>
+</tr>
+<tr>
+<td>
+…(content in second row, first column)
+</td>
+<td>
+…(content in second row, second column)
+</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="edit-on-github-button">Edit on GitHub button</h2>
+
+<div class="githubFeedback"><span class="githubButton"><a target="_blank" href="https://github.com/mikejan-amazon/mikejan-amazon.github.io/blob/master//_docs/Jekyll Doc Project/Theme Instructions/formattingtest.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a></span></div>
+
+<h2 id="definition-lists">Definition lists</h2>
+
+<dl>
+  <dt>Why is the sky blue?</dt>
+  <dd>It’s not actually blue. This is an illusion based on the way molecules in our atmosphere reflect light waves. Most companies use A/B testing to try to optimize one result. If their goal is to sell widgets, they test having a blue button versus having a red button for a few days. If after that period, more people who have seen the red button buy the widget, they resolve the test and show the red button to everyone.</dd>
+  <dt>Why is the ocean blue?</dt>
+  <dd>It reflects the color of the atmosphere. Most companies use A/B testing to try to optimize one result. If their goal is to sell widgets, they test having a blue button versus having a red button for a few days. If after that period, more people who have seen the red button buy the widget, they resolve the test and show the red button to everyone.</dd>
+</dl>
+
+<h2 id="glossary-page">Glossary page</h2>
+
+<dl>
+    
+    <dt></dt>
+    <dd></dd>
+    
+    <dt></dt>
+    <dd></dd>
+    
+</dl>
+
+<h2 id="tooltips">Tooltips</h2>
+
+<p>The setting was <a data-toggle="tooltip" title="on the bank by a river">Riparian</a>
+ to say the least.</p>
+
+<h2 id="buttons">Buttons</h2>
+
+<p><button type="button" class="btn">Basic</button>
+<button type="button" class="btn btn-default">Default</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button></p>
+
+<h2 id="horizontal-line">Horizontal line</h2>
+
+<p>This is a horizontal line.</p>
+
+<hr />
+
+<h2 id="small-font">Small font</h2>
+
+<p>This is <small>small</small> font.</p>
+
+<h2 id="navtabs">Navtabs</h2>
+
+<ul id="profileTabs" class="nav nav-tabs">
+  <li class="active"><a class="noExtIcon" href="#firsttab" data-toggle="tab">First Tab</a></li>
+  <li><a class="noExtIcon" href="#secondtab" data-toggle="tab">Second Tab</a></li>
+  <li><a class="noExtIcon" href="#thirdtab" data-toggle="tab">Third Tab</a></li>
+  <li><a class="noExtIcon" href="#fourthtab" data-toggle="tab">Fourth Tab</a></li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="firsttab">
+    <div class="subheading">First Tab
+    </div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="secondtab">
+    <div class="subheading">Second tab
+    </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="thirdtab">
+    <div class="subheading">Third tab
+    </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+   </div>
+  <div role="tabpanel" class="tab-pane" id="fourthtab">
+    <div class="subheading">Fourth Tab
+    </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  </div>
+</div>
+
+<h2 id="progress-bar">Progress Bar</h2>
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+    0%
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 2%;">
+    2%
+  </div>
+</div>
+
+<h2 id="labels">Labels</h2>
+
+<p><span class="label label-default">Default</span>
+<span class="label label-primary">Primary</span>
+<span class="label label-success">Success</span>
+<span class="label label-info">Info</span>
+<span class="label label-warning">Warning</span>
+<span class="label label-danger">Danger</span></p>
+
+<h1 id="breadcrumbs">breadcrumbs</h1>
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+
+                  
+
+                    
+
+
+
+            </div>
+        </div><!--/.container-->
+
+
+    </div><!--/.page-container-->
+    <!-- * Bootsnipp footer: http://bootsnipp.com/snippets/1KEEq (MIT license) -->
+
+<div class="footertop">
+    <div class="container">
+        <div class="col-md-6">
+            <p></p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-6 footerleft ">
+
+
+              
+                        <div class="logofooter"> About Amazon Pay</div>
+                <p class="footer-description">2018 Amazon Payments, Inc. or its affiliates Amazon Payments, Inc. | 410 Terry Ave N | Seattle, Washington 98109-5210 Customer agreement and policies Transaction and account security  Privacy notice File a complaint Internet scams and phishing Money Transmitter License 
+</p>
+
+            </div>
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7">Amazon Pay</h6>
+                <ul class="footer-ul">
+                  
+                    <li><a class="noExtIcon" href="http://someurl1.com"> Press</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl2.com"> Support</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Contact Us</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Jobs</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</footer>
+<!--subfooter start from here -->
+
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            <p>© 2018 Amazon Payments, Inc. or its affiliates</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+
+</body>
+
+</html>

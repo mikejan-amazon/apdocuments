@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Generating a PDF | Jekyll How-to Guide</title>
+    
+    <base>
+    <meta name="description" content="You can generate a PDF of your Jekyll project. The PDF uses Prince XML to generate the PDF and allows you to configure which pages you want printed. The... " >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- FontAwesome (GPL license) -->
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery (MIT license)-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- jQuery cookie (MIT license)-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- Navgoco (BSD license)-->
+    <script type="text/javascript" src="assets/js/jquery.navgoco.min.js"></script>
+    <!-- Bootstrap (MIT license)-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Anchor JS (MIT license)-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+        <script>
+        $( document ).ready(function() {
+            anchors.add('h2,h3,h4,h5');
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    
+
+    <script>
+        $( document ).ready(function() {
+            $("#docnavsidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'open', // open
+                save: true,
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 300,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', true);
+            });
+        });
+
+    </script>
+
+ <!-- For responsive button to toggle sidebar -->
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script>
+
+    <!-- User defined js -->
+    <script src="assets/js/main.js"></script>
+    <!--Bootstrap (MIT license) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/user_defined_web_styles.css" />
+    <style>
+        ul#markdown-toc::before  {
+        content: "Table of Contents"
+         }
+    </style>
+
+</head>
+<body class="default">
+<div class="page-container">
+
+
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+              
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="fa fa-bars fa-2x"></span>
+                </button>
+                
+                
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
+                
+
+
+                  
+  <div class="navbar-brand"><a class="noExtIcon" href="index.html"><img class="navbar-logo" src="images/logo.png"/></a></div>
+  
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+
+                    <!-- single item nav items appear here -->
+
+                    
+                    
+
+                          <!-- drop-down nav items appear here -->
+
+                    
+                    
+                    
+
+                    
+
+
+                </ul>
+                
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+
+                     <div id="search-topnav-container">
+                        <form action="search.html" method="get">
+                          <div class="input-group search">
+                            <input type="text" id="search-box" name="query" class="form-control" placeholder="Search ...">
+                            <div class="input-group-btn">
+                              <button class="btn btn-default" type="submit" value="search">
+                                <i class="glyphicon glyphicon-search"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+
+
+                    </li>
+                </ul>
+                
+            </div>
+
+        </div>
+
+
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+                
+<div class="mydocsidebar">
+
+
+<div class="sidebar-inner">
+
+
+  
+
+
+<div class="productTitle">Generic</div>
+<p class="external">
+    <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+</p>
+
+
+
+    <ul id="docnavsidebar" class="docnav">
+    
+    
+        
+    
+    <li class="level1"><a href="#">Theme Instructions</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="index.html">Getting Started</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-sidebar-navigation.html">Sidebar Navigation</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-content-and-formatting.html">Content and Formatting</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items open"><a href="jekyllhowto-pdf.html">Generate a PDF</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-troubleshooting.html">Troubleshooting</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+    
+    <li class="level1"><a href="#">General Jekyll Topics</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-install-jekyll-on-mac.html">Install Jekyll on Mac</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-install-jekyll-on-windows.html">Install Jekyll on Windows</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-atom-text-editor.html">Tips for Atom Text Editor</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources">Other Resources</div>
+<ul id="entrypages">
+        
+        <li><a class="noExtIcon" href="">Forums</a></li>
+        
+        <li><a class="noExtIcon" href="">Other Documentation</a></li>
+        
+        <li><a class="noExtIcon" href="">Support Portal</a></li>
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-9 main">
+
+                    <div class="subtitle">
+                    
+
+                      </div>
+
+                      
+
+
+                    <h1>Generating a PDF</h1>
+
+                
+                <div class="githubFeedback"><span class="githubButton"><a target="_blank" href="https://github.com/mikejan-amazon/mikejan-amazon.github.io/blob/master//_docs/Jekyll Doc Project/Theme Instructions/jekyllhowto-pdf.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a></span></div>
+
+                
+                    <p>You can generate a PDF of your Jekyll project. The PDF uses <a href="https://www.princexml.com/">Prince XML</a> to generate the PDF and allows you to configure which pages you want printed. The PDF output includes a table of contents for the entire guide, a mini-TOC on each section page, page numbers in cross references, and running headers and footers. The styling uses Bootstrap’s CSS for print styles. You can see a sample here: <a href="pdf/jekyllhowto.pdf">Jekyll How-to Guide (PDF)</a>.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#generatecomprehensivepdf" id="markdown-toc-generatecomprehensivepdf">Generate a PDF of All Docs in a Sidebar</a></li>
+  <li><a href="#generate-a-pdf-of-a-single-page" id="markdown-toc-generate-a-pdf-of-a-single-page">Generate a PDF of a Single Page</a></li>
+  <li><a href="#modify-the-print-styles" id="markdown-toc-modify-the-print-styles">Modify the Print Styles</a></li>
+  <li><a href="#changepdfstyles" id="markdown-toc-changepdfstyles">Change the PDF Styles</a></li>
+  <li><a href="#change-the-pdfs-headers-or-footers" id="markdown-toc-change-the-pdfs-headers-or-footers">Change the PDF’s Headers or Footers</a></li>
+  <li><a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a></li>
+  <li><a href="#analyzing-the-output" id="markdown-toc-analyzing-the-output">Analyzing the Output</a></li>
+</ul>
+
+<h2 id="generatecomprehensivepdf">Generate a PDF of All Docs in a Sidebar</h2>
+
+<ol>
+  <li>Install Prince XML:
+    <ul>
+      <li><a href="https://www.princexml.com/doc/installing/#macos">MacOS instructions</a></li>
+      <li><a href="https://www.princexml.com/doc/installing/#windows">Windows instructions</a></li>
+    </ul>
+  </li>
+  <li>Create a configuration file for the PDF output. Copy the <strong>_config_pdf_jekyllhowto.yml</strong> file and rename it to match your project’s name (e.g., (<strong>_config_pdf_&lt;myproject&gt;.yml</strong>).</li>
+  <li>Open the configuration file and customize the following values:
+    <ul>
+      <li><code class="highlighter-rouge">print_title</code>: Appears on the PDF’s title page and running header.</li>
+      <li><code class="highlighter-rouge">print_subtitle</code>: Appears on the PDF’s title page.</li>
+      <li><code class="highlighter-rouge">sidebar</code>: Used to generate the table of contents and mini-TOC.</li>
+      <li><code class="highlighter-rouge">folderPath</code>: The folder path to your site output (for example, <code class="highlighter-rouge">/Users/tomjoht/projects/devcomm-appstore-v2/_site</code>). Prince needs this absolute path to access the files.</li>
+      <li><code class="highlighter-rouge">copyright_notice</code>: The copyright statement that you want to appear in the manual.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Open your sidebar data file and add the following section after <code class="highlighter-rouge">folders</code>:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">folders</span><span class="pi">:</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Frontmatter</span>
+  <span class="na">jurl</span><span class="pi">:</span> <span class="s">/frontmatter.html</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">frontmatter</span>
+  <span class="na">pdf</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">folderitems</span><span class="pi">:</span>
+
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Title page</span>
+    <span class="na">jurl</span><span class="pi">:</span> <span class="s">/pdf_title_page.html</span>
+    <span class="na">pdf</span><span class="pi">:</span> <span class="no">true</span>
+
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Copyright page</span>
+    <span class="na">jurl</span><span class="pi">:</span> <span class="s">/pdf_copyright_page.html</span>
+    <span class="na">pdf</span><span class="pi">:</span> <span class="no">true</span>
+
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">TOC page</span>
+    <span class="na">jurl</span><span class="pi">:</span> <span class="s">/pdf_toc_page.html</span>
+    <span class="na">pdf</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Add a new property for each section title and page called <code class="highlighter-rouge">pdf: true</code> for all the pages you want included in the PDF. Follow the example in the previous code sample. Alternatively, look at <strong>_data/jekyllhowto.yml</strong> file.</li>
+  <li>
+    <p>Organize your pages into subfolders by section. (Sections are the <code class="highlighter-rouge">folders</code> title that contains <code class="highlighter-rouge">folderitems</code>, or the <code class="highlighter-rouge">subfolders</code> title that contains <code class="highlighter-rouge">subfolderitems</code>, etc.)</p>
+
+    <p>For example, if your product nav has the folders “Getting Started” and “Configuration”, create folders inside the _docs folder named “Getting Started” and “Configuration”. Group the pages within those sections into those folders.</p>
+  </li>
+  <li>
+    <p>For each folder, add a new page that will serve as the mini-TOC for that section. Call it something that like **minitoc_<folder_name>.md**.</folder_name></p>
+
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> It might be helpful to organize your pages into subfolders by section. All files get flattened into the root directory when your site builds, so it doesn’t matter how many subfolders you use to organize your content.</div>
+  </li>
+  <li>
+    <p>Open up each mini-TOC file and add the following, customizing the frontmatter values for your own project:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Get Started</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/iap-minitoc-get-started.html</span>
+<span class="na">sidebar</span><span class="pi">:</span> <span class="s">in_app_purchasing</span>
+<span class="nn">---</span>
+
+<span class="pi">{</span><span class="err">%</span> <span class="nv">include pdfminitoc.html %</span><span class="pi">}</span>
+</code></pre></div>    </div>
+
+    <p>The <code class="highlighter-rouge">title</code> should be the same as the section title in your sidebar table of contents. The <code class="highlighter-rouge">permalink</code> should match your file name. The <code class="highlighter-rouge">sidebar</code> corresponds to your product sidebar.</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Be careful with your file names here. If you mistype a file name, the PDF won’t build and you’ll have to sort out the cause of the error later. In fact, Prince is much more exacting about only generating a PDF if all listed assets are available. You’ll likely encounter some errors in the PDF generation process that stem from unavailable files or mistyped names in your sidebar data file. Think of these errors as helpful validation.</div>
+  </li>
+  <li>
+    <p>Open up your sidebar data file (in the _data folder) and add a <code class="highlighter-rouge">jurl</code> property for each <strong>section</strong> entry, like this:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Jekyll Project Setup</span>
+  <span class="na">jurl</span><span class="pi">:</span> <span class="s">/jekyllhowto-project-setup.html</span>
+  <span class="na">pdf</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">folderitems</span><span class="pi">:</span>
+</code></pre></div>    </div>
+
+    <p>Point the <code class="highlighter-rouge">jurl</code> value to your mini-TOC file.See the _data/jekyllhowto.yml file for an example.</p>
+  </li>
+  <li>
+    <p>Open up the first file in your table of contents (after the Frontmatter section). Add <code class="highlighter-rouge">class: first</code> in the page’s frontmatter.</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Jekyll Project Setup</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/jekyllhowto-minitoc-project-setup.html</span>
+<span class="na">sidebar</span><span class="pi">:</span> <span class="s">jekyllhowto</span>
+<span class="na">class</span><span class="pi">:</span> <span class="s">first</span>
+<span class="nn">---</span>
+</code></pre></div>    </div>
+
+    <p>This property will reset the numbering so that the first page begins on “1” (after the lower-roman number numbering for the TOC and frontmatter section.)</p>
+
+    <p>Before running Prince, we need to build an HTML-friendly output for Prince to consume. This HTML-friendly output will apply the layout that we want reflected in the print material.</p>
+  </li>
+  <li>
+    <p>Create a Jekyll server shortcut file to build the PDF-friendly output that the Prince script will consume. Copy <strong>serve_pdf_jekyllhowto.sh</strong> and customize the file name with your own project. Open the file and customize the PDF file name to match your PDF configuration file:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve --config _config_pdf_jekyllhowto.yml
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a build shortcut file to make it easy to run Prince to generate the PDF. Copy <strong>build_pdf_jekyllhowto.sh</strong> and customize the file name with your own project. Open the file and customize the PDF file name (change <code class="highlighter-rouge">jekyllhowto.pdf</code>):</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "Building the PDF ...";
+prince --javascript --input-list=_site/assets/prince-list.txt -o pdf/jekyllhowto.pdf;
+echo "Done. Look in the /pdf folder in your project directory.";
+</code></pre></div>    </div>
+
+    <p>The prince-list.txt file contains scripts that iterate through your sidebar data file and gather links to all the pages to consolidate in the PDF. The <code class="highlighter-rouge">-o</code> parameter specifies the file name and location Prince should write the PDF file to. If you’re having trouble with pages appearing, you can check prince-list.txt in your _site/assets output and make sure a valid link to the file exists on the page. The <code class="highlighter-rouge">--input-list</code> parameter in the above command is the input source for Prince.</p>
+  </li>
+</ol>
+
+<p><strong>Building the PDF</strong></p>
+
+<ol>
+  <li>
+    <p>From the command line, build the HTML output that uses your PDF configuration file:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">.</span> serve_pdf_jekyllhowto.sh
+</code></pre></div>    </div>
+
+    <p>(Use the custom Jekyll server shortcut you created earlier.)</p>
+  </li>
+  <li>
+    <p>When the server preview finishes, open another tab and build the PDF:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">.</span> build_pdf_jekyllhowto.sh
+</code></pre></div>    </div>
+
+    <p>You don’t need to have Jekyll server running to build the PDF. But it’s helpful in case you build the PDF and notice some issues you want to fix.</p>
+
+    <p>If successful, you’ll see a message like this:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Building the PDF ...
+Done. Look in the /pdf folder in your project directory.
+</code></pre></div>    </div>
+
+    <p>(Actually, the message will appear even if the build is unsuccessful — it just lets you know the process finished.)</p>
+
+    <p>Look in the root directory of your project (not the _/site folder), look for your PDF.</p>
+  </li>
+</ol>
+
+<h2 id="generate-a-pdf-of-a-single-page">Generate a PDF of a Single Page</h2>
+
+<p>If you just want to create a simple PDF of one page in your docs, you can skip most of the steps in the previous section. To generate a PDF of a single doc:</p>
+
+<ol>
+  <li>Complete steps 1 through 3 in the previous section, <a href="#generatecomprehensivepdf">Generate a PDF of All Docs in a Sidebar</a>.</li>
+  <li>
+    <p>Build the HTML-friendly version of the site:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve --config _config_pdf_jekyllhowto.yml
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>From the command line, navigate to the _site folder. Then run this:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>prince --javascript jekyllhowto-content-and-formatting.html -o pdf/jekyllhowto-content-and-formatting.pdf;
+</code></pre></div>    </div>
+
+    <p>In this case, the page being converted to PDF is jekyllhowto-content-and-formatting.html. Replace this with the page you want.</p>
+  </li>
+</ol>
+
+<h2 id="modify-the-print-styles">Modify the Print Styles</h2>
+
+<p>The print styles are defined in <strong>assets/css/pdf/printstyles.css</strong>. To overwrite the styles:</p>
+
+<ol>
+  <li>
+    <p>Copy the contents of <strong>printstyles.css</strong>, which is packaged in the gem.</p>
+
+    <p>To get the contents of the file, run <code class="highlighter-rouge">bundle show documentation-theme-jekyll-multioutput</code> from your Jekyll project directory. Go to the path shown and open the <strong>assets/css/pdf/printstyles.css</strong> file.</p>
+  </li>
+  <li>
+    <p>Copy and paste the contents of <strong>printstyles.css</strong> into a new file called <strong>user_defined_pdf_styles.css</strong>. Put <strong>user_defined_pdf_styles.css</strong> file into a folder called <strong>assets/css/pdf</strong> in your Jekyll project.</p>
+
+    <p>This will overwrite the <strong>user_defined_pdf_styles.css</strong> file (which is blank) in the gem’s files. This gem file is a placeholder intended to accommodate custom styles. It is referenced in the PDF layout files.</p>
+  </li>
+  <li>
+    <p>Change the styles as desired. See <a href="https://www.princexml.com/doc/9.0/properties/">CSS Properties</a> for a list of styles supported by Prince XML.</p>
+  </li>
+</ol>
+
+<h2 id="changepdfstyles">Change the PDF Styles</h2>
+
+<p>Does a style not look right? Do you want to customize the headers or footers for a specific page? You can do so by modifying the print stylesheet: <strong>assets/css/pdf/printstyles.css</strong>.</p>
+
+<p>You can simply add regular CSS here as you want. See <a href="https://www.princexml.com/doc/8.1/properties/">CSS Properties</a> on the Prince XML site for supported properties.</p>
+
+<h2 id="change-the-pdfs-headers-or-footers">Change the PDF’s Headers or Footers</h2>
+
+<ol>
+  <li>Follow the instructions in the previous section, <a href="#changepdfstyles">Change the PDF Styles</a>.</li>
+  <li>
+    <p>In your PDF configuration file (e.g., _config_pdf_jekyllhowto.yml), in the <code class="highlighter-rouge">defaults</code> section, add a <code class="highlighter-rouge">class</code> as a default to your <strong>/_docs</strong> and <strong>pages</strong>. For example:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">pages</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s">printpdf</span>
+      <span class="na">class</span><span class="pi">:</span> <span class="s">myclass</span>
+  <span class="pi">-</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">docs</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s">printpdf</span>
+      <span class="na">class</span><span class="pi">:</span> <span class="s">myclass</span>
+</code></pre></div>    </div>
+
+    <p>This will add a default <code class="highlighter-rouge">class</code> property and value to your page’s frontmatter, like this:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">class</span><span class="pi">:</span> <span class="s">myclass</span>
+<span class="nn">---</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Open the <strong>user_defined_pdf_styles.css</strong> file and define the style like this:</p>
+
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span><span class="nc">.myclass</span> <span class="p">{</span> <span class="nl">page</span><span class="p">:</span> <span class="n">myclass</span> <span class="p">}</span>
+<span class="k">@page</span> <span class="n">myclass</span> <span class="p">{</span>
+    <span class="k">@top-left</span> <span class="p">{</span>
+        <span class="nl">content</span><span class="p">:</span> <span class="s1">" "</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">@top-right</span> <span class="p">{</span>
+        <span class="nl">content</span><span class="p">:</span> <span class="n">prince-script</span><span class="p">(</span><span class="n">datestamp</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">@bottom-right</span> <span class="p">{</span>
+        <span class="nl">content</span><span class="p">:</span> <span class="n">counter</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="nb">lower-roman</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">@bottom-left</span> <span class="p">{</span>
+        <span class="nl">content</span><span class="p">:</span> <span class="n">prince-script</span><span class="p">(</span><span class="n">guideName</span><span class="p">);</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">11px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>See the <a href="https://www.princexml.com/doc/9.0/page-selectors/">Page Selectors</a> topic in the Prince XML documentation for more details.</p>
+
+    <p>The <code class="highlighter-rouge">datestamp</code> and <code class="highlighter-rouge">guideName</code> functions are special Prince functions defined in the printpdf.html layout (packaged in the assets/pdf folder of the gem). Other JavaScript generated content is also possible. See the <a href="http://www.princexml.com/doc/8.1/script-func/">Prince XML site</a> for details.</p>
+  </li>
+</ol>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>If you see an error that Prince can’t load an input file, it means one of the files in the list is incorrectly named. For example, you might see this error after running your <code class="highlighter-rouge">. build_pdf_jekyllhowto.sh</code> command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>prince: /Users/tomjoht/projects/myapp/_site/jekyllhowto-minitoc-getting-started.html: error: can't open input file: No such file or directory
+</code></pre></div></div>
+
+<p>If you see this error, look to make sure the file appears in the _site directory and is properly named. Check the <code class="highlighter-rouge">permalink</code> name of the file as well as its name in the sidebar menu file (e.g., _data/jekyllhowto.yml).</p>
+
+<p>You might also get errors if you have JavaScript or non-allowed CSS syntax in your content.</p>
+
+<h2 id="analyzing-the-output">Analyzing the Output</h2>
+
+<p>Look at the PDF. Check the display of your tables, images, code samples, and other formatting. Look at the running header and footer, as well as the title page, table of contents, and mini-TOC pages. Does it all look good? If so, great.</p>
+
+<p>If you need to conditionalize some content so that it doesn’t appear in the guide, you can use an if condition like this:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">format</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"pdf"</span><span class="w"> </span><span class="p">%}</span>
+This won't appear in the guide....
+<span class="p">{%</span><span class="w"> </span><span class="kr">endunless</span><span class="w"> </span><span class="p">%}</span>
+
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">unless</code> acts like a negative. You would read the above like this: Run this code <em>unless</em> site.format equals pdf.</p>
+
+<p>You can also conditionalize your content using this syntax:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">format</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"web"</span><span class="w"> </span><span class="p">%}</span>
+This won't appear in the guide....
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+
+</code></pre></div></div>
+
+<p>The configuration file for the Jekyll and Hippo outputs contains <code class="highlighter-rouge">format: web</code>. The configuration file for PDFs contains <code class="highlighter-rouge">format: pdf</code>.</p>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+
+                  
+
+                    
+
+
+
+            </div>
+        </div><!--/.container-->
+
+
+    </div><!--/.page-container-->
+    <!-- * Bootsnipp footer: http://bootsnipp.com/snippets/1KEEq (MIT license) -->
+
+<div class="footertop">
+    <div class="container">
+        <div class="col-md-6">
+            <p></p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-6 footerleft ">
+
+
+              
+                        <div class="logofooter"> About Amazon Pay</div>
+                <p class="footer-description">2018 Amazon Payments, Inc. or its affiliates Amazon Payments, Inc. | 410 Terry Ave N | Seattle, Washington 98109-5210 Customer agreement and policies Transaction and account security  Privacy notice File a complaint Internet scams and phishing Money Transmitter License 
+</p>
+
+            </div>
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7">Amazon Pay</h6>
+                <ul class="footer-ul">
+                  
+                    <li><a class="noExtIcon" href="http://someurl1.com"> Press</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl2.com"> Support</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Contact Us</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Jobs</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</footer>
+<!--subfooter start from here -->
+
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            <p>© 2018 Amazon Payments, Inc. or its affiliates</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+
+</body>
+
+</html>

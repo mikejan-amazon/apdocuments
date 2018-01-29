@@ -10,7 +10,7 @@ copyright: 2017 Your Company, Inc.
 ############# TOP NAVIGATION BAR ################
 
 # if you want to use a text title (the "title" property as defined above) instead of a logo image in your nav bar, comment out the logo below. Logo images are constrained at 50px in height.
-logo: assets/companylogo.png
+logo: images/logo.png
 
 
 # the links.html script requires you to list your sidebars here. this is if you're using managed links (see jekyllhowto-content-and-formatting.html#automatedlinks)

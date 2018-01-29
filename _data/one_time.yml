@@ -1,0 +1,279 @@
+sidebarTitle: Amazon Pay and Login with Amazon integration guide
+
+## See the generic.yml file as an example of the allowed yaml format.
+
+folders:
+
+- title: Overview
+  folderitems:
+    - title: Amazon Pay and Login with Amazon introduction
+      jurl: /one_time_amazon_pay_and_login_with_amazon_introduction.html
+      ref: one_time_amazon_pay_and_login_with_amazon_introduction
+
+    - title: Transaction workflow
+      jurl: /one_time_transaction_workflow.html
+      ref: one_time_transaction_workflow
+
+- title: Integration Steps
+  folderitems:
+  - title: "Step 1: Register"
+    jurl: /one_time_register.html
+    ref: one_time_register
+
+  - title: "Step 2: Configure"
+    jurl: one_time_configure.html
+    ref: one_time_configure
+
+  - title: "Step 3: Add a button"
+    jurl: /one_time_add_a_button.html
+    ref: one_time_add_a_button
+
+  - title: "Step 4: Add the AddressBook and Wallet widgets"
+    jurl: /one_time_add_widgets.html
+    ref: one_time_add_widgets
+
+  - title: "Step 5: Set purchase details and confirm the purchase"
+    jurl: /one_time_set_and_confirm_purchase.html
+    ref: one_time_set_and_confirm_purchase
+
+  - title: "Step 6: Request an authorization"
+    jurl: /one_time_request_an_authorization.html
+    ref: one_time_request_an_authorization
+
+  - title: "Step 7: Prepare to handle declined authorizations"
+    jurl: /one_time_handle_decline.html
+    ref: one_time_handle_decline
+      
+  - title: "Step 8: Request a Capture"
+    jurl: /one_time_request_capture.html
+    ref: one_time_request_capture
+
+  - title: "Step 9: Mark the order reference as closed"
+    jurl: /one_time_mark_order_as_closed.html
+    ref: one_time_mark_order_as_closed
+
+  - title: "Step 10: Request a refund"
+    jurl: /one_time_request_refund.html
+    ref: one_time_request_refund
+
+    subfolders:
+    - title: Optional intergration steps
+      subfolderitems:
+      - title: Accessing order information at the time of buyer Login
+        jurl: /one_time_accessing_order_information
+        ref: one_time_accessing_order_information
+
+      - title: Enabling a redirect authentication
+        jurl: /one_time_enable_redirect.html
+        ref: one_time_enable_redirect
+
+      - title: Obtaining profile information
+        jurl: /one_time_obtain_profile.html
+        ref: one_time_obtain_profile
+
+      - title: Displaying read-only AddressBook and Wallet widgets
+        jurl: /one_time_display_read_only.html
+        ref: one_time_display_read_only
+
+      - title: Integrating without the AddressBook widget
+        jurl: /one_time_no_address_widget.html
+        ref: one_time_no_address_widget
+
+      - title: Managing the transaction flow
+        jurl: /one_time_managing_transaction_flow.html
+        ref: one_time_managing_transaction_flow
+
+      - title: Re-rendering Wallet widgets
+        jurl: /one_time_rerender.html
+        ref: one_time_rerender
+
+      - title: Authorize and capture in one step
+        jurl: /one_time_capture_now.html
+        ref: one_time_capture_now
+
+      - title: Amazon Pay guest checkout
+        jurl: /one_time_guest_checkout.html
+        ref: one_time_guest_checkout
+
+      - title: Capturing funds 30 days after authorization
+        jurl: /one_time_thirty_day_limit.html
+        ref: one_time_thirty_day_limit
+
+      - title: Settlement and transaction reports
+        jurl: /one_time_reports.html
+        ref: one_time_reports
+          
+- title: Additional transactions
+  folderitems:
+    - title: Handling complex payment scenarios
+      jurl: /one_time_handling_complex_scenarios.html
+      ref: one_time_handling_complex_scenarios
+
+    - title: Handling complex payment scenarios
+      jurl: /one_time_handling_post_purchase_modifications.html
+      ref: one_time_handling_post_purchase_modifications
+
+- title: Testing your integration in the Sandbox environment
+  folderitems:
+    - title: Testing your integration in the sandbox environment
+      jurl: /one_time_testing_in_sandbox.html
+      ref: one_time_testing_in_sandbox
+
+    - title: Setting up an Amazon Pay Sandbox test account
+      jurl: /one_time_setting_up_test_account.html
+      ref: one_time_setting_up_test_account
+
+    - title: Sample addresses and payment instruments
+      jurl: /one_time_sample_addresses_and_payment_instruments.html
+      ref: one_time_sample_addresses_and_payment_instruments
+
+    - title: Differences between the Sandbox and Production environments
+      jurl: /one_time_differences_between_environments.html
+      ref: one_time_differences_between_environments
+
+    - title: Sandbox simulations
+      jurl: /one_time_sandbox_simulations.html
+      ref: one_time_sandbox_simulations
+
+    - title: Taking your integration live
+      jurl: /one_time_integration_live.html
+      ref: one_time_integration_live
+
+- title: Code reference information
+  folderitems:
+  - title: Javascript
+    jurl: /one_time_javascript.html
+    ref: one_time_javascript
+
+    subfolders:
+    - title: Handling errors
+      subfolderitems:
+      - title: Introduction to handling errors
+        jurl: /one_time_introduction_error_handling.html
+        ref: one_time_introduction_error_handling
+
+      - title: Handling errors from Amazon Pay API calls
+        jurl: /one_time_handling_api_errors.html
+        ref: one_time_handling_api_errors
+
+      - title: Handling errors from Amazon Pay widgets
+        jurl: /one_time_handling_widget_errors.html
+        ref: one_time_handling_widget_errors
+
+    - title: Batch processing
+      subfolderitems:
+      - title: Introduction to batch processing
+        jurl: /one_time_batch_processing_introduction.html
+        ref: one_time_batch_processing_introduction
+
+      - title: "Step 1: Create the feed content"
+        jurl: /one_time_create_content_feed.html
+        ref: one_time_create_content_feed
+          
+      - title: "Step 2: Submit the feed content"
+        jurl: /one_time_submit_content_feed.html
+        ref: one_time_submit_content_feed
+
+      - title: "Step 3: Check for processing status"
+        jurl: /one_time_check_processing_status.html
+        ref: one_time_check_processing_status
+
+      - title: "Step 4: Process IPN messages"
+        jurl: /one_time_process_ipn.html
+        ref: one_time_process_ipn
+          
+      - title: "Step 5: Request a processing report"
+        jurl: /one_time_request_processing_report.html
+        ref: one_time_request_processing_report
+
+      - title: "Step 6: Reconcile your feed with your processing report"
+        jurl: /one_time_reconcile_feed.html
+        ref: one_time_reconcile_feed
+
+    - title: Instant Payment Notification (IPN)
+      subfolderitems:
+      - title: Handling Instant Payment Notification (IPN) messages
+        jurl: /one_time_handling_ipn.html
+        ref: one_time_handling_ipn
+
+      - title: Custom data fields
+        jurl: /one_time_custom_data_fields.html
+        ref: one_time_custom_data_fields
+          
+      - title: Sample notifications
+        jurl: /one_time_sample_notifications.html
+        ref: one_time_sample_notifications
+
+      - title: Responding to an IPN message
+        jurl: /one_time_ipn_response.html
+        ref: one_time_ipn_response
+
+      - title: Best practices for handling IPNs
+        jurl: /one_time_ipn_best_practice.html
+        ref: one_time_ipn_best_practice
+
+    - title: API information
+      subfolderitems:
+      - title: API introductions
+        jurl: /one_time_api_introductions.html
+        ref: one_time_api_introductions
+
+      - title: Access tokens
+        jurl: /one_time_access_tokens.html
+        ref: one_time_access_tokens
+
+      - title: Customer-facing email content that you can provide
+        jurl: /one_time_custom_email_content.html
+        ref: one_time_custom_email_content
+
+    - title: Widgets
+      subfolderitems:
+      - title: Button widgets
+        jurl: /one_time_button_widgets.html
+        ref: one_time_button_widgets
+
+      - title: Payment widgets
+        jurl: /one_time_payment_widgets.html
+        ref: one_time_payment_widgets
+
+    - title: TLS/SSL certification
+      subfolderitems:
+      - title: Introduction to TLS/SSL
+        jurl: /one_time_certification.html
+        ref: one_time_certification
+
+      - title: TLS/SSL certificates and Amazon requirements
+        jurl: /one_time_certificates.html
+        ref: one_time_certificates
+
+- title: Appendix
+  folderitems:
+  - title: Integration overview
+    jurl: /one_time_integration_overview.html
+    ref: one_time_integration_overview
+
+    subfolders:
+    - title: Registering with Amazon Pay
+      subfolderitems:
+      - title: Registering instructions
+        jurl: /one_time_registration_instructions.html
+        ref: one_time_registration_instructions
+
+      - title: Adding allowed JavaScript origins or allowed return URLs
+        jurl: /one_time_javascript_origins_and_allowed_urls.html
+        ref: one_time_javascript_origins_and_allowed_urls
+
+
+  - title: Style and button guidelines
+    jurl: /one_time_style_and_button_guidelines.html
+    ref: one_time_style_and_button_guidelines
+
+  - title: 
+    jurl: /one_time_browser_support.html
+    ref: one_time_browser_support
+
+  - title: Glossary
+    jurl: /one_time_glossary.html
+    ref: one_time_glossary
+
+

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Sidebar Navigation | Jekyll How-to Guide</title>
+    
+    <base>
+    <meta name="description" content="The output for the sidebar navigation gets generated from the sidebar yaml file in the _data folder. YAML files don’t use markup tags but rather spacing to create syntax. Look... " >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- FontAwesome (GPL license) -->
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery (MIT license)-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- jQuery cookie (MIT license)-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- Navgoco (BSD license)-->
+    <script type="text/javascript" src="assets/js/jquery.navgoco.min.js"></script>
+    <!-- Bootstrap (MIT license)-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Anchor JS (MIT license)-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+        <script>
+        $( document ).ready(function() {
+            anchors.add('h2,h3,h4,h5');
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    
+
+    <script>
+        $( document ).ready(function() {
+            $("#docnavsidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'open', // open
+                save: true,
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 300,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', true);
+            });
+        });
+
+    </script>
+
+ <!-- For responsive button to toggle sidebar -->
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script>
+
+    <!-- User defined js -->
+    <script src="assets/js/main.js"></script>
+    <!--Bootstrap (MIT license) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/user_defined_web_styles.css" />
+    <style>
+        ul#markdown-toc::before  {
+        content: "Table of Contents"
+         }
+    </style>
+
+</head>
+<body class="default">
+<div class="page-container">
+
+
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+              
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="fa fa-bars fa-2x"></span>
+                </button>
+                
+                
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
+                
+
+
+                  
+  <div class="navbar-brand"><a class="noExtIcon" href="index.html"><img class="navbar-logo" src="images/logo.png"/></a></div>
+  
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+
+                    <!-- single item nav items appear here -->
+
+                    
+                    
+
+                          <!-- drop-down nav items appear here -->
+
+                    
+                    
+                    
+
+                    
+
+
+                </ul>
+                
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+
+                     <div id="search-topnav-container">
+                        <form action="search.html" method="get">
+                          <div class="input-group search">
+                            <input type="text" id="search-box" name="query" class="form-control" placeholder="Search ...">
+                            <div class="input-group-btn">
+                              <button class="btn btn-default" type="submit" value="search">
+                                <i class="glyphicon glyphicon-search"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+
+
+                    </li>
+                </ul>
+                
+            </div>
+
+        </div>
+
+
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+                
+<div class="mydocsidebar">
+
+
+<div class="sidebar-inner">
+
+
+  
+
+
+<div class="productTitle">Generic</div>
+<p class="external">
+    <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+</p>
+
+
+
+    <ul id="docnavsidebar" class="docnav">
+    
+    
+        
+    
+    <li class="level1"><a href="#">Theme Instructions</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="index.html">Getting Started</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items open"><a href="jekyllhowto-sidebar-navigation.html">Sidebar Navigation</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-content-and-formatting.html">Content and Formatting</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-pdf.html">Generate a PDF</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-troubleshooting.html">Troubleshooting</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+    
+    <li class="level1"><a href="#">General Jekyll Topics</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-install-jekyll-on-mac.html">Install Jekyll on Mac</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-install-jekyll-on-windows.html">Install Jekyll on Windows</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-atom-text-editor.html">Tips for Atom Text Editor</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources">Other Resources</div>
+<ul id="entrypages">
+        
+        <li><a class="noExtIcon" href="">Forums</a></li>
+        
+        <li><a class="noExtIcon" href="">Other Documentation</a></li>
+        
+        <li><a class="noExtIcon" href="">Support Portal</a></li>
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-9 main">
+
+                    <div class="subtitle">
+                    
+
+                      </div>
+
+                      
+
+
+                    <h1>Sidebar Navigation</h1>
+
+                
+                <div class="githubFeedback"><span class="githubButton"><a target="_blank" href="https://github.com/mikejan-amazon/mikejan-amazon.github.io/blob/master//_docs/Jekyll Doc Project/Theme Instructions/jekyllhowto-sidebar-navigation.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a></span></div>
+
+                
+                    <p>The output for the sidebar navigation gets generated from the sidebar yaml file in the _data folder. YAML files don’t use markup tags but rather spacing to create syntax. Look carefully at the YAML syntax in the sample generic.yml  or jekyllhowto.yml files. The syntax for your YAML content must be correct in order for the files to be valid.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#how-the-sidebar-works" id="markdown-toc-how-the-sidebar-works">How the Sidebar Works</a></li>
+  <li><a href="#sidebarentries" id="markdown-toc-sidebarentries">Entries in the Sidebar</a></li>
+  <li><a href="#adding-additional-resources" id="markdown-toc-adding-additional-resources">Adding Additional Resources</a></li>
+  <li><a href="#sidebar-object-hierarchy" id="markdown-toc-sidebar-object-hierarchy">Sidebar Object Hierarchy</a></li>
+  <li><a href="#level-requirements" id="markdown-toc-level-requirements">Level Requirements</a></li>
+  <li><a href="#customize-the-header" id="markdown-toc-customize-the-header">Customize the Header</a></li>
+</ul>
+
+<h2 id="how-the-sidebar-works">How the Sidebar Works</h2>
+
+<p>The theme contains a file called _includes/sidebar.html that uses “for” loops to iterate through the items in this YAML file and push the content into an HTML format. When Jekyll builds your site, the sidebar gets included into each page. This means each page has its own copy of the sidebar code when the site builds.</p>
+
+<h2 id="sidebarentries">Entries in the Sidebar</h2>
+
+<p>Each entry in the sidebar files includes four properties — <code class="highlighter-rouge">title</code>, <code class="highlighter-rouge">jurl</code>, <code class="highlighter-rouge">hurl</code>, and <code class="highlighter-rouge">ref</code>. These properties stand for the page title, Jekyll URL, hard-coded URL, and the Markdown referent for linking. Here’s an example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Sample1</span>
+      <span class="na">jurl</span><span class="pi">:</span> <span class="s">/sample.html</span>
+      <span class="na">hurl</span><span class="pi">:</span> <span class="s">/solutions/widgets/acme/docs/sample</span>
+      <span class="na">ref</span><span class="pi">:</span> <span class="s">sample1</span>
+</code></pre></div></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The <code class="highlighter-rouge">hurl</code> value is optional. This is used only in systems where the relative URL may not work. Some server environments require the absolute, hard-coded URL to the page. If so, you can use this <code class="highlighter-rouge">hurl</code> value. (Unless you have an odd publishing system, you probably won’t use <code class="highlighter-rouge">hurl</code> and can omit it.)</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">title</code></td>
+      <td>The page title.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">hurl</code></td>
+      <td>The hard-coded (absolute) URL to your content. (This is only required if you’re publishing to a system that requires hard-coded URLs. Otherwise, omit this.)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">jurl</code></td>
+      <td>The Jekyll URL. Use a relative link that begins with a <code class="highlighter-rouge">/</code> and includes only page’s filename, not the folders. Use the “.html” file extension (even if your file has an .md extension in the source).</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ref</code></td>
+      <td>The shortname used to create the Markdown link references. This is a friendly way to refer to the page. You use this value as the Markdown referent when inserting links in your content.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="highlighter-rouge">ref</code> property is like a variable used to refer to either the <code class="highlighter-rouge">hurl</code> or <code class="highlighter-rouge">jurl</code> property, depending on which configuration file you use when building your Jekyll project.</p>
+<h2 id="adding-additional-resources">Adding Additional Resources</h2>
+
+<p>If you want to add some additional resources, such as to forums or other documentation, you can add them in a Related Resources section below the sidebar.</p>
+
+<p>Here’s an example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">###########################</span>
+
+<span class="na">related_resources_title</span><span class="pi">:</span> <span class="s">Other Resources</span>
+
+<span class="na">related_resources_list</span><span class="pi">:</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Forums</span>
+  <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://some.developer.forum.com/</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">More Documentation</span>
+  <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://more.documentation.company.com</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Documentation Portal</span>
+  <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://my.documentation.portal</span>
+</code></pre></div></div>
+
+<p>The sidebar will show this information below the sidebar.</p>
+
+<h2 id="sidebar-object-hierarchy">Sidebar Object Hierarchy</h2>
+
+<p>In addition to the properties required for each entry, sidebar entries must appear in the following hierarchy:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">folders</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Theme documentation</span>
+  <span class="na">folderitems</span><span class="pi">:</span>
+
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Homepage</span>
+    <span class="na">jurl</span><span class="pi">:</span> <span class="s">/index.html</span>
+    <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://docs.mycompany.com/index</span>
+    <span class="na">ref</span><span class="pi">:</span> <span class="s">home</span>
+
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Getting Started</span>
+    <span class="na">jurl</span><span class="pi">:</span> <span class="s">/getting-started.html</span>
+    <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://docs.mycompany.com/getting-started.</span>
+    <span class="na">ref</span><span class="pi">:</span> <span class="s">home</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Sample Folder Title</span>
+  <span class="na">folderitems</span><span class="pi">:</span>
+
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Sample1 level1</span>
+    <span class="na">jurl</span><span class="pi">:</span> <span class="s">/sample.html</span>
+    <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://docs.mycompany.com/solutions/widgets/acme/docs/sample</span>
+    <span class="na">ref</span><span class="pi">:</span> <span class="s">sample1</span>
+
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Sample2 level1</span>
+    <span class="na">jurl</span><span class="pi">:</span> <span class="s">/sample2.html</span>
+    <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://docs.mycompany.com/solutions/widgets/acme/docs/sample2</span>
+    <span class="na">ref</span><span class="pi">:</span> <span class="s">sample12</span>
+
+    <span class="na">subfolders</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Another level deep</span>
+      <span class="na">output</span><span class="pi">:</span> <span class="s">web</span>
+      <span class="na">subfolderitems</span><span class="pi">:</span>
+
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Some content</span>
+        <span class="na">jurl</span><span class="pi">:</span> <span class="s">/sublevel1.html</span>
+        <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://docs.mycompany.com/solutions/widgets/acme/docs/sublevel1</span>
+        <span class="na">ref</span><span class="pi">:</span> <span class="s">sublevel1</span>
+
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Some more content</span>
+        <span class="na">jurl</span><span class="pi">:</span> <span class="s">/sublevel2.html</span>
+        <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://docs.mycompany.com/solutions/widgets/acme/docs/sublevel2</span>
+        <span class="na">ref</span><span class="pi">:</span> <span class="s">sublevel2</span>
+
+        <span class="na">subsubfolders</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Last level deep</span>
+          <span class="na">output</span><span class="pi">:</span> <span class="s">web</span>
+          <span class="na">subsubfolderitems</span><span class="pi">:</span>
+
+          <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Some content last level</span>
+            <span class="na">jurl</span><span class="pi">:</span> <span class="s">/subsublevel1.html</span>
+            <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://docs.mycompany.com/solutions/widgets/acme/docs/subsublevel1</span>
+            <span class="na">ref</span><span class="pi">:</span> <span class="s">sample</span>
+
+          <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Some more content last level</span>
+            <span class="na">jurl</span><span class="pi">:</span> <span class="s">/subsublevel2.html</span>
+            <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://docs.mycompany.com/solutions/widgets/acme/docs/subsublevel2</span>
+            <span class="na">ref</span><span class="pi">:</span> <span class="s">sample</span>
+
+
+
+</code></pre></div></div>
+
+<p>As you can see, there’s a <code class="highlighter-rouge">folders</code> object that contains <code class="highlighter-rouge">folderitems</code>. Inside <code class="highlighter-rouge">folderitems</code> is another level called <code class="highlighter-rouge">subfolders</code>, which contains <code class="highlighter-rouge">subfolderitems</code>.</p>
+
+<p>Below <code class="highlighter-rouge">subfolders</code> is another level called <code class="highlighter-rouge">subsubfolders</code>, which contains <code class="highlighter-rouge">subssubfolderitems</code>. Each new level begins on a new line two spaces out from the previous one. The general hierarchy looks like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>folders:
+  folderitems:
+    subfolders:
+      subfolderitems:
+</code></pre></div></div>
+
+<p>Don’t change any of these object names that indicate the levels. The theme’s template files use a <code class="highlighter-rouge">for</code> loop to iterate through this structure based on these object names.</p>
+
+<h2 id="level-requirements">Level Requirements</h2>
+
+<p>Note that you must have items at each level. If you want to have a folder that contains other folders and no individual items, you must add a <code class="highlighter-rouge">-</code> at that level. For example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">folders</span><span class="pi">:</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">My parent folder</span>
+  <span class="na">folderitems</span><span class="pi">:</span>
+
+  <span class="pi">-</span>
+
+    <span class="na">subfolders</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">My child folder 1</span>
+      <span class="na">output</span><span class="pi">:</span> <span class="s">web</span>
+      <span class="na">subfolderitems</span><span class="pi">:</span>
+
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Some content</span>
+        <span class="na">jurl</span><span class="pi">:</span> <span class="s">/sublevela.html</span>
+        <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://docs.mycompany.com/i/solutions/widgets/acme/docs/sublevela</span>
+        <span class="na">ref</span><span class="pi">:</span> <span class="s">sublevela</span>
+
+    <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">My child folder 2</span>
+      <span class="na">output</span><span class="pi">:</span> <span class="s">web</span>
+      <span class="na">subfolderitems</span><span class="pi">:</span>
+
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Some content</span>
+        <span class="na">jurl</span><span class="pi">:</span> <span class="s">/sublevelb.html</span>
+        <span class="na">hurl</span><span class="pi">:</span> <span class="s">https://docs.mycompany.com/i/solutions/widgets/acme/docs/sublevelb</span>
+        <span class="na">ref</span><span class="pi">:</span> <span class="s">sublevelb</span>
+
+</code></pre></div></div>
+
+<p>This structure looks like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── My parent folder
+│   ├── My child folder 1
+│      └── sublevela.html
+│   ├── My child folder 2
+│      └── sublevelb.html
+</code></pre></div></div>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When you’re creating new levels, it’s easiest to copy the correct formatting and then adjust the values. Use the sample formatting included in the generic.yml file to copy and paste new levels. If you get the spacing wrong, when Jekyll builds the project, it will usually throw an error and note a mapping problem in your YAML file.</div>
+
+<h2 id="customize-the-header">Customize the Header</h2>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+
+                  
+
+                    
+
+
+
+            </div>
+        </div><!--/.container-->
+
+
+    </div><!--/.page-container-->
+    <!-- * Bootsnipp footer: http://bootsnipp.com/snippets/1KEEq (MIT license) -->
+
+<div class="footertop">
+    <div class="container">
+        <div class="col-md-6">
+            <p></p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-6 footerleft ">
+
+
+              
+                        <div class="logofooter"> About Amazon Pay</div>
+                <p class="footer-description">2018 Amazon Payments, Inc. or its affiliates Amazon Payments, Inc. | 410 Terry Ave N | Seattle, Washington 98109-5210 Customer agreement and policies Transaction and account security  Privacy notice File a complaint Internet scams and phishing Money Transmitter License 
+</p>
+
+            </div>
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7">Amazon Pay</h6>
+                <ul class="footer-ul">
+                  
+                    <li><a class="noExtIcon" href="http://someurl1.com"> Press</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl2.com"> Support</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Contact Us</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Jobs</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</footer>
+<!--subfooter start from here -->
+
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            <p>© 2018 Amazon Payments, Inc. or its affiliates</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+
+</body>
+
+</html>

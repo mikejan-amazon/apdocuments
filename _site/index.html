@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Step 3: Add a button widget | </title>
+    
+    <base>
+    <meta name="description" content="The Amazon Pay and Login with Amazon product consists of the Amazon Pay and the Login with Amazon services, which are technically closely related and run on the same platform.... " >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- FontAwesome (GPL license) -->
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery (MIT license)-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- jQuery cookie (MIT license)-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- Navgoco (BSD license)-->
+    <script type="text/javascript" src="assets/js/jquery.navgoco.min.js"></script>
+    <!-- Bootstrap (MIT license)-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Anchor JS (MIT license)-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+        <script>
+        $( document ).ready(function() {
+            anchors.add('h2,h3,h4,h5');
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    
+
+    <script>
+        $( document ).ready(function() {
+            $("#docnavsidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'open', // open
+                save: true,
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 300,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', true);
+            });
+        });
+
+    </script>
+
+ <!-- For responsive button to toggle sidebar -->
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script>
+
+    <!-- User defined js -->
+    <script src="assets/js/main.js"></script>
+    <!--Bootstrap (MIT license) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/user_defined_web_styles.css" />
+    <style>
+        ul#markdown-toc::before  {
+        content: "Table of Contents"
+         }
+    </style>
+
+</head>
+<body class="default">
+<div class="page-container">
+
+
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+              
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="fa fa-bars fa-2x"></span>
+                </button>
+                
+                
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
+                
+
+
+                  
+  <div class="navbar-brand"><a class="noExtIcon" href="index.html"><img class="navbar-logo" src="images/logo.png"/></a></div>
+  
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+
+                    <!-- single item nav items appear here -->
+
+                    
+                    
+
+                          <!-- drop-down nav items appear here -->
+
+                    
+                    
+                    
+
+                    
+
+
+                </ul>
+                
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+
+                     <div id="search-topnav-container">
+                        <form action="search.html" method="get">
+                          <div class="input-group search">
+                            <input type="text" id="search-box" name="query" class="form-control" placeholder="Search ...">
+                            <div class="input-group-btn">
+                              <button class="btn btn-default" type="submit" value="search">
+                                <i class="glyphicon glyphicon-search"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+
+
+                    </li>
+                </ul>
+                
+            </div>
+
+        </div>
+
+
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+                
+<div class="mydocsidebar">
+
+
+<div class="sidebar-inner">
+
+
+  
+
+
+<div class="productTitle">Amazon Pay and Login with Amazon integration guide</div>
+<p class="external">
+    <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+</p>
+
+
+
+    <ul id="docnavsidebar" class="docnav">
+    
+    
+    <li class="level1"><a href="#">Overview</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_amazon_pay_and_login_with_amazon_introduction.html">Amazon Pay and Login with Amazon introduction</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_transaction_workflow.html">Transaction workflow</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+    
+    <li class="level1"><a href="#">Integration Steps</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_register.html">Step 1: Register</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_configure.html">Step 2: Configure</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_add_a_button.html">Step 3: Add a button</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_add_widgets.html">Step 4: Add the AddressBook and Wallet widgets</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_set_and_confirm_purchase.html">Step 5: Set purchase details and confirm the purchase</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_request_an_authorization.html">Step 6: Request an authorization</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_handle_decline.html">Step 7: Prepare to handle declined authorizations</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_request_capture.html">Step 8: Request a Capture</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_mark_order_as_closed.html">Step 9: Mark the order reference as closed</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_request_refund.html">Step 10: Request a refund</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Optional intergration steps</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_accessing_order_information">Accessing order information at the time of buyer Login</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_enable_redirect.html">Enabling a redirect authentication</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_obtain_profile.html">Obtaining profile information</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_display_read_only.html">Displaying read-only AddressBook and Wallet widgets</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_no_address_widget.html">Integrating without the AddressBook widget</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_managing_transaction_flow.html">Managing the transaction flow</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_rerender.html">Re-rendering Wallet widgets</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_capture_now.html">Authorize and capture in one step</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_guest_checkout.html">Amazon Pay guest checkout</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_thirty_day_limit.html">Capturing funds 30 days after authorization</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_reports.html">Settlement and transaction reports</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+    
+    <li class="level1"><a href="#">Additional transactions</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_handling_complex_scenarios.html">Handling complex payment scenarios</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_handling_post_purchase_modifications.html">Handling complex payment scenarios</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+    
+    <li class="level1"><a href="#">Testing your integration in the Sandbox environment</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_testing_in_sandbox.html">Testing your integration in the sandbox environment</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_setting_up_test_account.html">Setting up an Amazon Pay Sandbox test account</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_sample_addresses_and_payment_instruments.html">Sample addresses and payment instruments</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_differences_between_environments.html">Differences between the Sandbox and Production environments</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_sandbox_simulations.html">Sandbox simulations</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_integration_live.html">Taking your integration live</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+    
+    <li class="level1"><a href="#">Code reference information</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_javascript.html">Javascript</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Handling errors</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_introduction_error_handling.html">Introduction to handling errors</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_handling_api_errors.html">Handling errors from Amazon Pay API calls</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_handling_widget_errors.html">Handling errors from Amazon Pay widgets</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Batch processing</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_batch_processing_introduction.html">Introduction to batch processing</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_create_content_feed.html">Step 1: Create the feed content</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_submit_content_feed.html">Step 2: Submit the feed content</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_check_processing_status.html">Step 3: Check for processing status</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_process_ipn.html">Step 4: Process IPN messages</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_request_processing_report.html">Step 5: Request a processing report</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_reconcile_feed.html">Step 6: Reconcile your feed with your processing report</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Instant Payment Notification (IPN)</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_handling_ipn.html">Handling Instant Payment Notification (IPN) messages</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_custom_data_fields.html">Custom data fields</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_sample_notifications.html">Sample notifications</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_ipn_response.html">Responding to an IPN message</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_ipn_best_practice.html">Best practices for handling IPNs</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">API information</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_api_introductions.html">API introductions</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_access_tokens.html">Access tokens</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_custom_email_content.html">Customer-facing email content that you can provide</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Widgets</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_button_widgets.html">Button widgets</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_payment_widgets.html">Payment widgets</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">TLS/SSL certification</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_certification.html">Introduction to TLS/SSL</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_certificates.html">TLS/SSL certificates and Amazon requirements</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+    
+    <li class="level1"><a href="#">Appendix</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_integration_overview.html">Integration overview</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Registering with Amazon Pay</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_registration_instructions.html">Registering instructions</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="one_time_javascript_origins_and_allowed_urls.html">Adding allowed JavaScript origins or allowed return URLs</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_style_and_button_guidelines.html">Style and button guidelines</a></li>
+            
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="one_time_glossary.html">Glossary</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources"></div>
+<ul id="entrypages">
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-9 main">
+
+                    <div class="subtitle">
+                    
+
+                      </div>
+
+                      
+
+
+                    <h1>Step 3: Add a button widget</h1>
+
+                
+                <div class="githubFeedback"><span class="githubButton"><a target="_blank" href="https://github.com/mikejan-amazon/mikejan-amazon.github.io/blob/master//index.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a></span></div>
+
+                
+                    <p>The Amazon Pay and Login with Amazon product consists of the Amazon Pay and the Login with Amazon services, which are technically closely related and run on the same platform.</p>
+
+<ul>
+  <li>Amazon Pay is a checkout option that lets the buyer choose a shipping address and payment method that is stored in their Amazon user account.</li>
+  <li>Login with Amazon encourages your buyer to sign in using their Amazon login credentials when they arrive on your home page.</li>
+</ul>
+
+<p>When the buyer successfully signs in to Amazon, an access token is returned. The access token is specific to your client and buyer and the type of profile data you are requesting. You will need the access token to retrieve customer profile data.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#procedure" id="markdown-toc-procedure">Procedure</a></li>
+  <li><a href="#complete-code-sample" id="markdown-toc-complete-code-sample">Complete code sample</a></li>
+</ul>
+
+<h2 id="procedure">Procedure</h2>
+
+<p>Note: You must encode your data before processing. We recommend that you encode any data that you receive from us before outputting it in any form, like HTML, JavaScript, or in a URL. Output encoding ensures that malicious scripts or any other injected executable cannot be executed on your website. For additional details, see “Encode your data before processing” in the JavaScript section.</p>
+
+<p>Follow the steps below to add a button widget for buyer authentication. Do the steps in the order presented. In particular, you must not add the widgets.js script (step 2) before completing step 1. A complete code sample is offered at the end of this topic.</p>
+
+<p>Add callback for onAmazonLoginReady and onAmazonPaymentsReady to the &lt;head&gt; section of any page where you want the button to appear. The onAmazonPaymentsReady callback will render the button.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;head&gt;
+  &lt;script type='text/javascript'&gt;
+    window.onAmazonLoginReady = function() {
+      amazon.Login.setClientId('CLIENT-ID');
+    };
+    window.onAmazonPaymentsReady = function() {
+                showButton();
+    };
+  &lt;/script&gt;
+&lt;/head&gt;
+</code></pre></div></div>
+
+<p>For more information, see “Adding callback and widget.js code to your web pages” in the JavaScript section.
+Add the widget.js file below the callback functions.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;head&gt;
+  &lt;script type='text/javascript'&gt;
+    window.onAmazonLoginReady = function() {
+      amazon.Login.setClientId('CLIENT-ID');
+    };
+    window.onAmazonPaymentsReady = function() {
+                showButton();
+    };
+  &lt;/script&gt;
+
+  &lt;script async="async" src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'&gt;
+  &lt;/script&gt;
+&lt;/head&gt;
+</code></pre></div></div>
+
+<p>The script tag in the sample above contains an async attribute that allows the web page to load more quickly while the JavaScript code required by Amazon Pay is loaded in the background. This is the only asynchronous method supported by Amazon Pay.
+Add the button code to the body of your web page by adding JavaScript code in the &lt;body&gt; of every page where you want the button to appear.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;div id="AmazonPayButton"&gt;
+ &lt;/div&gt;
+  ...
+ &lt;script type="text/javascript"&gt;
+    function showButton(){
+      var authRequest; 
+      OffAmazonPayments.Button("AmazonPayButton", "SELLER-ID", { 
+        type:  "TYPE", 
+        color: "COLOR", 
+        size:  "SIZE", 
+
+        authorization: function() { 
+        loginOptions = {scope: "SCOPES", 
+          popup: "POPUP-PARAMETER"}; 
+        authRequest = amazon.Login.authorize (loginOptions, 
+          "REDIRECT-URL"); 
+        } 
+  }); 
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>The code sample above shows parameters that you can replace with your own values. For more information, see Button widget parameters.
+Add error handling to the button code.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>. . .
+onError: function(error) { 
+  // your error handling code.
+  // alert("The following error occurred: " 
+  //        + error.getErrorCode() 
+  //        + ' - ' + error.getErrorMessage());
+} 
+. . .
+</code></pre></div></div>
+
+<p>For more information about the onError handler, see Handling errors from Amazon Pay widgets.
+Add a logout option.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script type="text/javascript"&gt;
+  document.getElementById('Logout').onclick = function() {
+    amazon.Login.logout();
+  };
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>The logout option, often set up as a link, should delete any cached tokens and remove the user’s profile information, like their name, from your website. Then your website can present the login button again. Call the amazon.Login.logout() method to delete any cached tokens and clear the session created by Amazon. Subsequent calls to amazon.Login.authorize will present the login screen by default.</p>
+
+<h2 id="complete-code-sample">Complete code sample</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+&lt;head&gt;
+  &lt;script type='text/javascript'&gt;
+    window.onAmazonLoginReady = function() {
+      amazon.Login.setClientId('CLIENT-ID');
+    };
+    window.onAmazonPaymentsReady = function() {
+                showButton();
+    };
+  &lt;/script&gt;
+    &lt;script async="async" src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'&gt;
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+. . .
+ &lt;div id="AmazonPayButton"&gt;
+ &lt;/div&gt;
+  ...
+ &lt;script type="text/javascript"&gt;
+    function showButton(){
+      var authRequest; 
+      OffAmazonPayments.Button("AmazonPayButton", "SELLER-ID", { 
+        type:  "TYPE", 
+        color: "COLOR", 
+        size:  "SIZE", 
+
+        authorization: function() { 
+        loginOptions = {scope: "SCOPES", 
+          popup: "POPUP-PARAMETER"}; 
+        authRequest = amazon.Login.authorize (loginOptions, 
+          "REDIRECT-URL"); 
+        }, 
+ 
+        onError: function(error) { 
+          // your error handling code.
+          // alert("The following error occurred: " 
+          //        + error.getErrorCode() 
+          //        + ' - ' + error.getErrorMessage());
+        } 
+     });
+    }; 
+   &lt;/script&gt;
+   . . .
+   &lt;script type="text/javascript"&gt;
+     document.getElementById('Logout').onclick = function() {
+       amazon.Login.logout();
+     };
+   &lt;/script&gt;
+
+&lt;/body&gt;
+</code></pre></div></div>
+
+
+                  
+
+                    
+
+
+
+            </div>
+        </div><!--/.container-->
+
+
+    </div><!--/.page-container-->
+    <!-- * Bootsnipp footer: http://bootsnipp.com/snippets/1KEEq (MIT license) -->
+
+<div class="footertop">
+    <div class="container">
+        <div class="col-md-6">
+            <p></p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-6 footerleft ">
+
+
+              
+                        <div class="logofooter"> About Amazon Pay</div>
+                <p class="footer-description">2018 Amazon Payments, Inc. or its affiliates Amazon Payments, Inc. | 410 Terry Ave N | Seattle, Washington 98109-5210 Customer agreement and policies Transaction and account security  Privacy notice File a complaint Internet scams and phishing Money Transmitter License 
+</p>
+
+            </div>
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7">Amazon Pay</h6>
+                <ul class="footer-ul">
+                  
+                    <li><a class="noExtIcon" href="http://someurl1.com"> Press</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl2.com"> Support</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Contact Us</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Jobs</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</footer>
+<!--subfooter start from here -->
+
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            <p>© 2018 Amazon Payments, Inc. or its affiliates</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+
+</body>
+
+</html>

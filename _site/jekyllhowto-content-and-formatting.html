@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Content and formatting | Jekyll How-to Guide</title>
+    
+    <base>
+    <meta name="description" content="This page covers all the details you need to know about content and formatting, including topics such as page directories, links, alerts, images, and more.  Where... " >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- FontAwesome (GPL license) -->
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery (MIT license)-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- jQuery cookie (MIT license)-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- Navgoco (BSD license)-->
+    <script type="text/javascript" src="assets/js/jquery.navgoco.min.js"></script>
+    <!-- Bootstrap (MIT license)-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Anchor JS (MIT license)-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+        <script>
+        $( document ).ready(function() {
+            anchors.add('h2,h3,h4,h5');
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+    
+
+    <script>
+        $( document ).ready(function() {
+            $("#docnavsidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'open', // open
+                save: true,
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 300,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', true);
+            });
+        });
+
+    </script>
+
+ <!-- For responsive button to toggle sidebar -->
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script>
+
+    <!-- User defined js -->
+    <script src="assets/js/main.js"></script>
+    <!--Bootstrap (MIT license) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/user_defined_web_styles.css" />
+    <style>
+        ul#markdown-toc::before  {
+        content: "Table of Contents"
+         }
+    </style>
+
+</head>
+<body class="default">
+<div class="page-container">
+
+
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+              
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="fa fa-bars fa-2x"></span>
+                </button>
+                
+                
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
+                
+
+
+                  
+  <div class="navbar-brand"><a class="noExtIcon" href="index.html"><img class="navbar-logo" src="images/logo.png"/></a></div>
+  
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+
+                    <!-- single item nav items appear here -->
+
+                    
+                    
+
+                          <!-- drop-down nav items appear here -->
+
+                    
+                    
+                    
+
+                    
+
+
+                </ul>
+                
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+
+                     <div id="search-topnav-container">
+                        <form action="search.html" method="get">
+                          <div class="input-group search">
+                            <input type="text" id="search-box" name="query" class="form-control" placeholder="Search ...">
+                            <div class="input-group-btn">
+                              <button class="btn btn-default" type="submit" value="search">
+                                <i class="glyphicon glyphicon-search"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+
+
+                    </li>
+                </ul>
+                
+            </div>
+
+        </div>
+
+
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+                
+<div class="mydocsidebar">
+
+
+<div class="sidebar-inner">
+
+
+  
+
+
+<div class="productTitle">Generic</div>
+<p class="external">
+    <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+</p>
+
+
+
+    <ul id="docnavsidebar" class="docnav">
+    
+    
+        
+    
+    <li class="level1"><a href="#">Theme Instructions</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="index.html">Getting Started</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-sidebar-navigation.html">Sidebar Navigation</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items open"><a href="jekyllhowto-content-and-formatting.html">Content and Formatting</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-pdf.html">Generate a PDF</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-troubleshooting.html">Troubleshooting</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+    
+    <li class="level1"><a href="#">General Jekyll Topics</a>
+        <ul>
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-install-jekyll-on-mac.html">Install Jekyll on Mac</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-install-jekyll-on-windows.html">Install Jekyll on Windows</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="jekyllhowto-atom-text-editor.html">Tips for Atom Text Editor</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources">Other Resources</div>
+<ul id="entrypages">
+        
+        <li><a class="noExtIcon" href="">Forums</a></li>
+        
+        <li><a class="noExtIcon" href="">Other Documentation</a></li>
+        
+        <li><a class="noExtIcon" href="">Support Portal</a></li>
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-9 main">
+
+                    <div class="subtitle">
+                    
+
+                      </div>
+
+                      
+
+
+                    <h1>Content and formatting</h1>
+
+                
+                <div class="githubFeedback"><span class="githubButton"><a target="_blank" href="https://github.com/mikejan-amazon/mikejan-amazon.github.io/blob/master//_docs/Jekyll Doc Project/Theme Instructions/jekyllhowto-content-and-formatting.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a></span></div>
+
+                
+                    <p>This page covers all the details you need to know about content and formatting, including topics such as page directories, links, alerts, images, and more.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#where-to-store-your-pages" id="markdown-toc-where-to-store-your-pages">Where to Store Your Pages</a></li>
+  <li><a href="#pages-and-front-matter" id="markdown-toc-pages-and-front-matter">Pages and Front matter</a></li>
+  <li><a href="#markdown-formatting" id="markdown-toc-markdown-formatting">Markdown Formatting</a></li>
+  <li><a href="#kramdowntoc" id="markdown-toc-kramdowntoc">On-Page Table of Contents</a></li>
+  <li><a href="#headings" id="markdown-toc-headings">Headings</a></li>
+  <li><a href="#second-level-heading" id="markdown-toc-second-level-heading">Second-level heading</a>    <ul>
+      <li><a href="#third-level-heading" id="markdown-toc-third-level-heading">Third-level heading</a>        <ul>
+          <li><a href="#fourth-level-heading" id="markdown-toc-fourth-level-heading">Fourth-level heading</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#second-level-header" id="markdown-toc-second-level-header">Second level header</a></li>
+  <li><a href="#bulleted-lists" id="markdown-toc-bulleted-lists">Bulleted Lists</a></li>
+  <li><a href="#numbered-list" id="markdown-toc-numbered-list">Numbered list</a></li>
+  <li><a href="#complex-lists" id="markdown-toc-complex-lists">Complex Lists</a></li>
+  <li><a href="#another-complex-list" id="markdown-toc-another-complex-list">Another Complex List</a>    <ul>
+      <li><a href="#key-principle-to-remember-with-lists" id="markdown-toc-key-principle-to-remember-with-lists">Key Principle to Remember with Lists</a></li>
+    </ul>
+  </li>
+  <li><a href="#alerts" id="markdown-toc-alerts">Alerts</a></li>
+  <li><a href="#callouts" id="markdown-toc-callouts">Callouts</a></li>
+  <li><a href="#variableincludes" id="markdown-toc-variableincludes">Using Variables Inside Parameters with Includes</a></li>
+  <li><a href="#links" id="markdown-toc-links">Links</a>    <ul>
+      <li><a href="#automatedlinks" id="markdown-toc-automatedlinks">Cross-References</a></li>
+      <li><a href="#bookmarkssampepage" id="markdown-toc-bookmarkssampepage">Bookmark Links on the Same Page</a></li>
+      <li><a href="#bookmarklinks" id="markdown-toc-bookmarklinks">Links to Sections on Other Pages</a></li>
+      <li><a href="#linksexternalwebresources" id="markdown-toc-linksexternalwebresources">Links to External Web Resources</a></li>
+    </ul>
+  </li>
+  <li><a href="#detecting-broken-links" id="markdown-toc-detecting-broken-links">Detecting Broken Links</a></li>
+  <li><a href="#detecting-broken-links-across-the-entire-site" id="markdown-toc-detecting-broken-links-across-the-entire-site">Detecting broken links across the entire site</a></li>
+  <li><a href="#content-re-use-includes" id="markdown-toc-content-re-use-includes">Content re-use (includes)</a></li>
+  <li><a href="#variables" id="markdown-toc-variables">Variables</a></li>
+  <li><a href="#audio-includes" id="markdown-toc-audio-includes">Audio Includes</a></li>
+  <li><a href="#single-sourcing" id="markdown-toc-single-sourcing">Single sourcing</a></li>
+  <li><a href="#code-samples" id="markdown-toc-code-samples">Code Samples</a></li>
+  <li><a href="#markdown-tables" id="markdown-toc-markdown-tables">Markdown Tables</a></li>
+  <li><a href="#htmltables" id="markdown-toc-htmltables">HTML Tables</a></li>
+  <li><a href="#one-off-styles" id="markdown-toc-one-off-styles">One-off Styles</a></li>
+  <li><a href="#images_section" id="markdown-toc-images_section">Images</a></li>
+  <li><a href="#excluding-images-from-translated-builds" id="markdown-toc-excluding-images-from-translated-builds">Excluding Images from Translated Builds</a></li>
+  <li><a href="#inlineimages" id="markdown-toc-inlineimages">Including Inline Images</a></li>
+  <li><a href="#bold-italics" id="markdown-toc-bold-italics">Bold, Italics</a></li>
+  <li><a href="#question-and-answer-formatting" id="markdown-toc-question-and-answer-formatting">Question and Answer formatting</a></li>
+  <li><a href="#glossary-pages" id="markdown-toc-glossary-pages">Glossary Pages</a></li>
+  <li><a href="#tooltips" id="markdown-toc-tooltips">Tooltips</a></li>
+  <li><a href="#navtabs" id="markdown-toc-navtabs">Navtabs</a></li>
+  <li><a href="#workflow-maps" id="markdown-toc-workflow-maps">Workflow Maps</a></li>
+</ul>
+
+<h2 id="where-to-store-your-pages">Where to Store Your Pages</h2>
+
+<p>Store your files the <strong>_docs</strong> folder, inside a project folder that reflects your product’s name. Inside your project folder, you can organize your pages in any of subdirectories you want. As long as each page has a permalink property in the front matter, the pages will be moved into the root directory and flattened (that is, pulled out of any subdirectories) when your site builds.</p>
+
+<h2 id="pages-and-front-matter">Pages and Front matter</h2>
+
+<p>Each Jekyll page (which uses an .md extension) has front matter at the top set off with three hyphens at the top and bottom. The front matter for each page should look like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My File Name</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">myfile.html</span>
+<span class="na">sidebar</span><span class="pi">:</span> <span class="s">mysidebar</span>
+<span class="na">product</span><span class="pi">:</span> <span class="s">My Product</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>You can store the <code class="highlighter-rouge">sidebar</code> and <code class="highlighter-rouge">product</code> properties as defaults in your _config.yml file if you want. See the <code class="highlighter-rouge">defaults</code> property there.</p>
+
+<p>If you have a colon in your title, put the title’s value in parentheses, like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: "ACME: A generic project"
+permalink: myfile.html
+sidebar: mysidebar
+product: My Product
+---
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">layout</code> property for the sidebar is specified in the configuration file’s defaults. <code class="highlighter-rouge">_config.yml</code> specifies a Jekyll layout (<code class="highlighter-rouge">default.html</code>).</p>
+
+<p>The format for any content in the front matter must be in YAML syntax. You can’t use Liquid or other <code class="highlighter-rouge">{{ }}</code> syntax in your front matter. (In other words, no variables in YAML.)</p>
+
+<p>The <code class="highlighter-rouge">permalink</code> should match your file name exactly, and it should include the html file extension (even if your file is markdown).</p>
+
+<h2 id="markdown-formatting">Markdown Formatting</h2>
+
+<p>Jekyll uses <a href="http://kramdown.gettalong.org/">kramdown-flavored Markdown</a>. You can read up more on kramdown and implement any of the techniques available. Some templates for alerts and images are available.</p>
+
+<h2 id="kramdowntoc">On-Page Table of Contents</h2>
+
+<p>To add a table of contents in your topic, add this formatting where you want the table to appear:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* TOC
+{:toc}
+</code></pre></div></div>
+
+<p>Additionally, add this into your frontmatter:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<p>If you don’t have `` in your frontmatter, the TOC won’t show up in the layout.</p>
+
+<h2 id="headings">Headings</h2>
+
+<p>Use pound signs before the heading title to designate the level. <em>Note that headings must have one empty line before and after the heading.</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Second-level heading
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<h2 id="second-level-heading">Second-level heading</h2>
+
+<hr />
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### Third-level heading
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<h3 id="third-level-heading">Third-level heading</h3>
+
+<hr />
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#### Fourth-level heading
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<h4 id="fourth-level-heading">Fourth-level heading</h4>
+
+<p>You can also use the <a href="https://kramdown.gettalong.org/syntax.html#headers">Setext style headers</a> if you want. If you’re converting content to Markdown from Word docs using Pandoc, Pandoc will use the Setext style header markup. This means level 2 headers will be underlined rather than containing the <code class="highlighter-rouge">##</code> markup:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Second level header
+-------------------
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<h2 id="second-level-header">Second level header</h2>
+
+<p>First level headers are underlined with an equals sign (but since h1 headings are used only for the doc title, not any subheadings within the doc, you won’t see them). Levels beyond 2 use the regular pounds signs (<code class="highlighter-rouge">###</code>) for markup.</p>
+
+<h2 id="bulleted-lists">Bulleted Lists</h2>
+
+<p>This is a bulleted list:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*  first item
+*  second item
+*  third item
+</code></pre></div></div>
+
+<p>Use two spaces after the asterisk.</p>
+
+<p><strong>Result:</strong></p>
+
+<ul>
+  <li>first item</li>
+  <li>second item</li>
+  <li>third item</li>
+</ul>
+
+<h2 id="numbered-list">Numbered list</h2>
+
+<p>This is a simple numbered list:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.  First item.
+2.  Second item.
+3.  Third item.
+</code></pre></div></div>
+
+<p>Use two spaces after each numbered item (until number 10, then use 1 space). You can use whatever numbers you want — when the Markdown filter processes the content, it will correctly sequence the list items.</p>
+
+<p><strong>Result:</strong></p>
+
+<ol>
+  <li>First item.</li>
+  <li>Second item.</li>
+  <li>Third item.</li>
+</ol>
+
+<p>You can control numbering with this syntax on the line preceding a list item: <code class="highlighter-rouge">{:start="3"}</code></p>
+
+<h2 id="complex-lists">Complex Lists</h2>
+
+<p>Here’s a more complex list:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.  Sample first item.
+
+    * sub-bullet one
+    * sub-bullet two
+
+2.  Continuing the list
+
+    1.  sub-list numbered one
+    2.  sub-list numbered two
+
+3.  Another list item.
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<ol>
+  <li>
+    <p>Sample first item.</p>
+
+    <ul>
+      <li>sub-bullet one</li>
+      <li>sub-bullet two</li>
+    </ul>
+  </li>
+  <li>
+    <p>Continuing the list</p>
+
+    <ol>
+      <li>sub-list numbered one</li>
+      <li>sub-list numbered two</li>
+    </ol>
+  </li>
+  <li>
+    <p>Another list item.</p>
+  </li>
+</ol>
+
+<h2 id="another-complex-list">Another Complex List</h2>
+
+<p>Here’s a list with some intercepting text:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.  Sample first item.
+
+    This is a result statement that talks about something....
+
+2.  Continuing the list
+
+    {% include note.html content="This is a sample note. If you have \"quotes\", you must escape them." %} 
+
+    Here's a list in here:
+
+    * first item
+    * second item
+
+3.  Another list item.
+
+    ```js
+    function alert("hello");
+    ```
+
+4.  Another item.
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<ol>
+  <li>
+    <p>Sample first item.</p>
+
+    <p>This is a result statement that talks about something….</p>
+  </li>
+  <li>
+    <p>Continuing the list</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Remember to do this. If you have “quotes”, you must escape them.</div>
+
+    <p>Here’s a list in here:</p>
+
+    <ul>
+      <li>first item</li>
+      <li>second item</li>
+    </ul>
+  </li>
+  <li>
+    <p>Another list item.</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Another item.</p>
+  </li>
+</ol>
+
+<h3 id="key-principle-to-remember-with-lists">Key Principle to Remember with Lists</h3>
+
+<p>The key principle is to line up the first character after the dot following the number:</p>
+
+<figure><img class="docimage " src="images/liningup.png" /><figcaption>Lining up the left edge ensures the list stays intact.</figcaption></figure>
+
+<p>For the sake of simplicity, use two spaces after the dot for numbers 1 through 9. Use one space for numbers 10 and up. If any part of your list doesn’t align on this left edge, the list will not render correctly.</p>
+
+<h2 id="alerts">Alerts</h2>
+
+<p>For alerts, use the alerts templates, like this:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">note</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">content</span><span class="o">=</span><span class="s2">"This is a note."</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This is a note.</div>
+
+<hr />
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">tip</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">content</span><span class="o">=</span><span class="s2">"This is a tip."</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> This is a tip.</div>
+
+<hr />
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">warning</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">content</span><span class="o">=</span><span class="s2">"This is a warning."</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> This is a warning.</div>
+
+<hr />
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">important</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">content</span><span class="o">=</span><span class="s2">"This is important."</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> This is important.</div>
+
+<hr />
+
+<p>Alerts have just one include property: <code class="highlighter-rouge">content</code>. If you need to use quotation inside the <code class="highlighter-rouge">content</code> quotation marks, escape the quotation marks by putting back slashes (<code class="highlighter-rouge">\</code>) before them.</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="err">{%</span><span class="w"> </span><span class="nv">include</span><span class="w"> </span><span class="nv">warning</span><span class="p">.</span><span class="nv">html</span><span class="w"> </span><span class="nv">content</span><span class="err">=</span><span class="s2">"This is a \"</span><span class="nv">serious</span><span class="err">\</span><span class="s2">" warning."</span><span class="w"> </span><span class="err">%}
+</span></code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> This is a “serious” warning.</div>
+
+<p>Note that you can use Markdown syntax inside of your alerts. (You don’t need to add <code class="highlighter-rouge">markdown="span"</code> tags anywhere, since they’re already included in the alert templates.)</p>
+
+<h2 id="callouts">Callouts</h2>
+
+<p>Callouts are similar to alerts but are intended for longer text. A callout simply has a left border that is a specific color. The color uses Bootstrap’s classes.</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">callout</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">content</span><span class="o">=</span><span class="s2">"This is my callout. It tends to be a bit longer, and provides less visual attention than an alert. &lt;br/&gt;&lt;br/&gt;Here is a new paragraph."</span><span class="w"> </span><span class="na">type</span><span class="o">=</span><span class="s2">"info"</span><span class="w"> </span><span class="na">title</span><span class="o">=</span><span class="s2">"Sample Callout"</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<div class="bs-callout bs-callout-info"><span class="calloutTitle">Sample Callout</span><br /><br />This is my callout. It tends to be a bit longer, and provides less visual attention than an alert. <br /><br />Here is a new paragraph.</div>
+
+<p>Parameters are as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+      <th>Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">content</code></td>
+      <td>The content for the parameter.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">type</code></td>
+      <td>The color for the callout. Options are info, warning, danger, success, primary, default.</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">title</code></td>
+      <td>A title for the callout. The color matches the type property.</td>
+      <td>Required</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As with alerts, you can use Markdown inside of callouts.</p>
+
+<h2 id="variableincludes">Using Variables Inside Parameters with Includes</h2>
+
+<p>Suppose you have a product name or some other property that you’re storing as a variable in your configuration file, and you want to use this variable in the <code class="highlighter-rouge">content</code> parameter for your alert. You will get an error if you use Liquid syntax inside a include parameter. For example, this syntax will produce an error:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">note</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">content</span><span class="o">=</span><span class="s2">"The {{site.company}} is pleased to announce
+an upcoming release."</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>To use variables in your include parameters, you must use the “variable parameter” approach. First you use a <code class="highlighter-rouge">capture</code> tag to capture some content. Then you reference this captured tag in your include. Here’s an example.</p>
+
+<p>In my site configuration file, I have a property called <code class="highlighter-rouge">myvariable</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>myvariable: ACME
+</code></pre></div></div>
+
+<p>I want to use this variable in my note include.</p>
+
+<p>First, before the note, capture the content for the note’s include like this:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="na">company_note</span><span class="w"> </span><span class="p">%}</span>The <span class="p">{{</span><span class="nv">site</span><span class="p">.</span><span class="nv">myvariable</span><span class="p">}}</span> company is pleased to announce an upcoming release.<span class="p">{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>Now reference the <code class="highlighter-rouge">company_note</code> in your <code class="highlighter-rouge">include</code> parameter like this:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">note</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">content</span><span class="o">=</span><span class="nv">company_note</span>}<span class="err">
+</span></code></pre></div></div>
+
+<p><strong>Result</strong>:</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The  company is pleased to announce an upcoming release.</div>
+
+<p>Note the omission of quotation marks with variable parameters.</p>
+
+<p>Also note that instead of storing the variable in your site’s configuration file, you could also put the variable in your page’s front matter. Then instead of using <code class="highlighter-rouge">{{site.myvariable}}</code>, you would use <code class="highlighter-rouge">{{page.myvariable}}</code>.</p>
+
+<h2 id="links">Links</h2>
+
+<p>There are several types of links:</p>
+
+<ul>
+  <li><a href="#automatedlinks">Cross-References</a></li>
+  <li><a href="#bookmarkssampepage">Bookmark Links on the Same Page</a></li>
+  <li><a href="#linksexternalwebresources">Links to External Web Resources</a></li>
+  <li><a href="#bookmarklinks">Links to Sections on Other Pages</a></li>
+</ul>
+
+<h3 id="automatedlinks">Cross-References</h3>
+
+<p>To link one documentation topic to another inside the same project (internal cross references, not links to external web resources), don’t use manual Markdown links. Instead, use an automated ref property that is generated from the <code class="highlighter-rouge">_include/links.html</code> file (which loops through your sidebar and gets all the <code class="highlighter-rouge">ref</code> properties).</p>
+
+<p>This automated approach is more efficient and easier than manual Markdown link formatting. Additionally, it is the only way to scale link paths for translation projects.</p>
+
+<p>For each item in your sidebar menu, include a <code class="highlighter-rouge">ref</code> property like this:</p>
+
+<pre>
+- title: Sample Topic
+  jurl: /sample.html
+  hurl: /solutions/devices/product/docs/sample
+  <span class="red">ref: sample</span>
+</pre>
+
+<p>Then open your <strong>_config.yml</strong> file and make sure your project’s sidebar name is included in the <strong>sidebars</strong> property.</p>
+
+<p>The file that generates the links (<code class="highlighter-rouge">_includes/links.html</code>) iterates through the sidebar data files (all the ones listed in your configuration file, that is) and constructs a list of Markdown reference-style links.</p>
+
+<p>(The forward slash (<code class="highlighter-rouge">/</code>), which is listed in the sidebar data file’s <code class="highlighter-rouge">jurl</code> property, gets removed from the Jekyll links, which allows links to be relative. It’s included in the sidebar data file to facilitate menu highlighting.)</p>
+
+<p>On each of your pages, you must include the links.html file at the bottom of the content:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">links</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="p">%}</span> 
+</code></pre></div></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If your links don’t work, check to see whether you remembered to include the links.html file at the bottom of each topic.</div>
+
+<p>When you add the <code class="highlighter-rouge">{% include links.html %}</code> reference at the end of the topic, it’s the equivalent of adding a <a href="https://daringfireball.net/projects/markdown/syntax#link">Markdown reference-style links</a> like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[sample]: somelink.html
+</code></pre></div></div>
+
+<p>You won’t actually see this referent on your page because it all happens in the build process. (The links.html file dynamically builds all the <code class="highlighter-rouge">ref</code> instances and then inserts this content at the bottom of the page, and then the Markdown filter process the content, converting it to HTML and inserting links where the references appear.)</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When you choose the <code class="highlighter-rouge">ref</code> values in your sidebar file, use the same names as your files. Otherwise it gets confusing to try to match up ref values with the right files.</div>
+
+<p>You can see the output of links.html by looking at the linkstest.html file in the _site directory after your site builds. It should include your pages in Markdown reference style formatting. This is what gets inserted at the bottom of every page when you build your Jekyll site.</p>
+
+<h3 id="bookmarkssampepage">Bookmark Links on the Same Page</h3>
+
+<p>If you want to link to a heading on the same page, first add an ID tag to the header like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Headings with ID Tags {#someIdTag}
+</code></pre></div></div>
+
+<p>Then reference it with a normal Markdown link:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Some link](#someIdTag)
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<p><a href="#someIdTag">Some link</a></p>
+
+<h3 id="bookmarklinks">Links to Sections on Other Pages</h3>
+
+<p>Suppose you want to link to a specific section heading on another page.</p>
+
+<p>First create a heading ID for the section you want to link to. On the <a href="index.html">Getting started page</a>, there are some headings like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## My updates {#updates}
+
+## Text editors {#editors}
+</code></pre></div></div>
+
+<p>Now add a <code class="highlighter-rouge">bookmarks</code> property to the entry in the sidebar data file and include all the heading ID tags on that page that you want to link to inside brackets.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    - title: My Page Name
+      jurl: /acme-mypage-name.html
+      hurl: /some/long/path/acme-mypage-name
+      ref: acme-mypage-name
+      bookmarks: [updates, editors]
+</code></pre></div></div>
+
+<p>The links.html file will automatically create Markdown link references for any strings in the <code class="highlighter-rouge">bookmarks</code> array.</p>
+
+<p>Use the following syntax for your link Markdown referent:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Here's a list of [editors you can use][acme-mypage-name#editors].
+</code></pre></div></div>
+
+<p>(The syntax actually resembles the same syntax for bookmark links, though the link is actually just a string.)</p>
+
+<p>The links.html file will create references that look like this in the build:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[getting-started#editors]: getting-started.html#editors
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<p>Here’s a list of [editors you can use][getting-started#editors].</p>
+
+<h3 id="linksexternalwebresources">Links to External Web Resources</h3>
+
+<p>For links to external web resources, just use regular Markdown style links using an absolute URL:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>See the [Android documentation](https://developer.android.com/index.html).
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<p>See the <a href="https://developer.android.com/index.html">Android documentation</a>.</p>
+
+<p>If links to external resources clutter the text, you can use Markdown reference style links instead of putting the URLs inline.</p>
+
+<p>Example:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>See the <span class="p">[</span><span class="nv">ColorFilterDimmer</span><span class="p">][</span><span class="ss">cfdim</span><span class="p">]</span> class and the <span class="p">[</span><span class="nv">codim</span><span class="p">][</span><span class="ss">ColorOverlayDimmer</span><span class="p">]</span> class in the Android documentation.
+
+...
+
+<span class="p">[</span><span class="ss">cfdim</span><span class="p">]:</span> <span class="sx">https://developer.android.com/reference/android/service/vr/VrListenerService.html</span>
+<span class="p">[</span><span class="ss">codim</span><span class="p">]:</span> <span class="sx">https://developer.android.com/reference/android/support/v17/leanback/graphics/ColorOverlayDimmer.html</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<p>See the <a href="[https://developer.android.com/index.html]">Android documentation</a>.</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If the link formatting doesn’t render correctly in your output, something is wrong with the link. Check to make sure you included the links.html file at the bottom of the file, and that your referent is correct.</div>
+
+<h2 id="detecting-broken-links">Detecting Broken Links</h2>
+
+<p>If you have an error with your Markdown link reference, kramdown won’t process the link. For example, suppose you referred to the link like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>See the [instruction for image borders][image-borders].
+</code></pre></div></div>
+
+<p>In this example, let’s say the real <code class="highlighter-rouge">ref</code> value is <code class="highlighter-rouge">imageborders</code> (without the hyphen). As a result, putting <code class="highlighter-rouge">image-borders</code> will result in no link.</p>
+
+<p><strong>Result:</strong></p>
+
+<p>See the [instruction for image borders][image-borders].</p>
+
+<p>To check for broken links in your output, do a search for <code class="highlighter-rouge">][</code> in your _site directory (restricting the search to *.html files only in the _site directory). The <code class="highlighter-rouge">][</code> is a unique syntax that is unlikely to be used in many other places, and can indicate a broken link.</p>
+
+<p>If you find a broken link, here are main causes:</p>
+
+<ul>
+  <li>You forgot to add the <code class="highlighter-rouge">{% include links.html %}</code> at the bottom of the file.</li>
+  <li>The Markdown referent you’re using doesn’t match the <code class="highlighter-rouge">ref</code> name in your sidebar data file.</li>
+</ul>
+
+<h2 id="detecting-broken-links-across-the-entire-site">Detecting broken links across the entire site</h2>
+
+<p>To check for broken links across the entire site, use the <a href="http://www.brokenlinkcheck.com/broken-links.php">Broken Link Checker tool</a>. For URLs that are listed as containing broken links, go to the page. Then use the <a href="https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf?hl=en-GB">Check My Links</a> Chrome extension to identify the broken link on the page.</p>
+
+<h2 id="content-re-use-includes">Content re-use (includes)</h2>
+
+<p>To re-use content, store the content in your <code class="highlighter-rouge">_includes</code> folder inside the <code class="highlighter-rouge">content</code> subfolder:</p>
+
+<p>Then use the <code class="highlighter-rouge">include</code> tag to reference the file. Here’s an example:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="nv">content</span>/<span class="nv">myfile</span><span class="p">.</span><span class="nv">md</span><span class="w"> </span><span class="p">%}</span> 
+</code></pre></div></div>
+
+<p>Content stored in <code class="highlighter-rouge">_includes</code> will be available to include in any page. To avoid naming conflicts with any includes in the gem-theme, include your product’s name in the file name of your include.</p>
+
+<p>Note that if you have an include that is only included in the same folder, you can use the <code class="highlighter-rouge">include_relative</code> tag and then put the included file in the same folder (rather than storing it in _includes). However, the <code class="highlighter-rouge">include_relative</code> tag can’t reference a file that is stored outside of the folder (with <code class="highlighter-rouge">../</code> syntax). (You can reference subfolder locations, though.)</p>
+
+<h2 id="variables">Variables</h2>
+
+<p>To use a variable, add the variable and its value to your config files, like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>myvariable: ACME
+</code></pre></div></div>
+
+<p>Then reference the property through the <code>site</code> namespace:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="nv">site</span><span class="p">.</span><span class="nv">myvariable</span><span class="p">}}</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<p>All properties in your configuration files are available through the <code>site</code> namespace. (Note that if you add values to your configuration files,  you must restart Jekyll for the changes to take effect.)</p>
+
+<p>All properties in the page’s front matter are available through the <code>page</code> namespace.</p>
+
+<p>If you have a lot of variables, you could also store them in the _date folder (for example, _data/myvars.yml). Then you would reference them through the <code class="highlighter-rouge">site.data</code> namespace (for example, <code class="highlighter-rouge">site.data.myvars.myvariable</code>).</p>
+
+<h2 id="audio-includes">Audio Includes</h2>
+
+<p>If you have an audio file that you want to include, you can use the audio include. Audio includes work similar to images. Here’s an example:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">audio</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">title</span><span class="o">=</span><span class="s2">"Example: Basic Punctuation"</span><span class="w"> </span><span class="na">file</span><span class="o">=</span><span class="s2">"jekyllhowto/audio/great"</span><span class="w"> </span><span class="na">type</span><span class="o">=</span><span class="s2">"mp3"</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>The parameters of the include are as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>A title tag for the element. Optional. This tag might be useful for SEO, but the title does not appear anywhere in the audio player’s display.</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>The name of the audio file, without the file extension.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>The extension for the file.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="single-sourcing">Single sourcing</h2>
+
+<p>Suppose you have content that you want to push out to multiple files. But there are some differences that each destination page should have.</p>
+
+<p>Create the include as usual. Where you want to differentiate the content, you could add this:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">device</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"product_a"</span><span class="w"> </span><span class="p">%}</span>
+Say this for product A only...
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>When you call the include, pass this parameter into the include:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="nv">content</span>/{{<span class="nv">site</span><span class="p">.</span><span class="nv">language</span>}}/<span class="nv">myfile</span><span class="p">.</span><span class="nv">md</span><span class="w"> </span><span class="na">device</span><span class="o">=</span><span class="s2">"product_a"</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<h2 id="code-samples">Code Samples</h2>
+
+<p>For code samples, use fenced code blocks with the language specified, like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```js
+console.log('hello');
+```
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>For the list of supported languages you can use and the official abbreviations, see <a href="https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers">Supported languages</a>.</p>
+
+<p>Jekyll applies syntax highlighting using a stylesheet that color codes the text based on the language.</p>
+
+<p>If you want to make specific text red inside a code sample (leaving all other text black), use <code class="highlighter-rouge">pre</code> tags instead of backticks, and then use <code class="highlighter-rouge">&lt;span class="red"&gt;</code> tags inside the code.</p>
+
+<p>For example, suppose you want to call attention to a particular line in a code example, in this case, <code class="highlighter-rouge">console.log</code>. You can apply a <code class="highlighter-rouge">red</code> class to that content to make it more apparent:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;pre&gt;
+if (chocolate == "healthy") {
+   chocolate = chocolate + 10000;
+   &lt;span class="red"&gt;console.log("chocolate healthy: " + chocolate);&lt;/span&gt;
+   }
+else (chocolate == "unhealthy") {
+   chocolate = chocolate + 50000;
+   &lt;span class="red"&gt;console.log("chocolate unhealthy: " + chocolate);&lt;/span&gt;
+}
+&lt;/pre&gt;
+</code></pre></div></div>
+
+<p><strong>Result</strong>:</p>
+
+<pre>
+if (chocolate == "healthy") {
+   chocolate = chocolate + 10000;
+   <span class="red">console.log("chocolate healthy: " + chocolate);</span>
+   }
+else (chocolate == "unhealthy") {
+   chocolate = chocolate + 50000;
+   <span class="red">console.log("chocolate unhealthy: " + chocolate);</span>
+}
+</pre>
+
+<p>Note that double curly braces <code class="highlighter-rouge">{{ }}</code> are reserved characters, so you cannot actually use them in code samples. If you have double curly braces, surround them with <code class="highlighter-rouge">raw</code> tags like this:</p>
+
+<pre>
+&#123;% raw %&#125;{{ }}&#123;% endraw %&#125;
+</pre>
+
+<p>Jekyll will not process any logic inside of <code class="highlighter-rouge">raw</code> tags.</p>
+
+<p>If your code sample is XML, this approach using <code class="highlighter-rouge">&lt;pre</code> tags won’t be enough. You’ll need to <a href="http://www.freeformatter.com/html-escape.html">escape all the HTML</a> and leave the <code class="highlighter-rouge">&lt;span&gt;</code> tags unescaped.</p>
+
+<p>Note that currently there’s a bug with Liquid when using the <code class="highlighter-rouge">highlight</code> tag for code samples within lists. If you run into this issue, use the fenced code block (with backticks) instead of using the <code class="highlighter-rouge">highlight</code> tag.</p>
+
+<h2 id="markdown-tables">Markdown Tables</h2>
+
+<p>You can use standard Markdown syntax for tables:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Priority apples | Second priority | Third priority |
+|-------|--------|---------|
+| ambrosia | gala | red delicious |
+| pink lady | jazz | macintosh |
+| honeycrisp | granny smith | fuji |
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priority apples</th>
+      <th>Second priority</th>
+      <th>Third priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ambrosia</td>
+      <td>gala</td>
+      <td>red delicious</td>
+    </tr>
+    <tr>
+      <td>pink lady</td>
+      <td>jazz</td>
+      <td>macintosh</td>
+    </tr>
+    <tr>
+      <td>honeycrisp</td>
+      <td>granny smith</td>
+      <td>fuji</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>However, Markdown tables don’t give you control over the column widths. Additionally, you can’t use block level tags (paragraphs or lists) inside Markdown tables, so if you need separate paragraphs inside a cell, you must use <code class="highlighter-rouge">&lt;br/&gt;&lt;br/&gt;</code>.</p>
+
+<p>If you want to add a class to the table in Markdown, add a tag like this:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{: .mystyle}
+| Priority apples | Second priority | Third priority |
+|-------|--------|---------|
+| ambrosia | gala | red delicious |
+| pink lady | jazz | macintosh |
+| honeycrisp | granny smith | fuji |
+</code></pre></div></div>
+
+<p>This will create a table with a class of <code class="highlighter-rouge">mystyle</code>.</p>
+
+<p>You could then add an embedded style for <code class="highlighter-rouge">mystyle</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;style&gt;
+
+.mystyle th {
+   font-weight: bold;
+}
+&lt;/style&gt;
+
+</code></pre></div></div>
+
+<h2 id="htmltables">HTML Tables</h2>
+
+<p>If you need a more sophisticated table syntax, use HTML syntax for the table. Although you’re using HTML, you can use Markdown inside the table cells by adding <code class="highlighter-rouge">markdown="span"</code> as an attribute for the <code class="highlighter-rouge">td</code>, as shown in the following table. You can also control the column widths through the <code class="highlighter-rouge">colgroup</code> properties. Here’s an example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table&gt;</span>
+<span class="nt">&lt;colgroup&gt;</span>
+<span class="nt">&lt;col</span> <span class="na">width=</span><span class="s">"60%"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;col</span> <span class="na">width=</span><span class="s">"40%"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/colgroup&gt;</span>
+<span class="nt">&lt;thead&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th&gt;</span>To create…<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;th&gt;</span>Use this skill type<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/thead&gt;</span>
+<span class="nt">&lt;tbody&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">markdown=</span><span class="s">"span"</span><span class="nt">&gt;</span>
+A skill that can handle just about any type of request.
+
+For example:
+
+- Look up information from a web service
+- Integrate with a web service to order something (order a car from Uber, order a pizza from Domino’s Pizza)
+- Interactive games
+- Just about anything else you can think of
+<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span>  <span class="na">markdown=</span><span class="s">"span"</span><span class="nt">&gt;</span>
+Custom skill (*custom interaction model*)
+
+See [Sample 3][sample3]
+
+...(more content...)
+<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;td</span>  <span class="na">markdown=</span><span class="s">"span"</span><span class="nt">&gt;</span>
+...(content in second row, first column)
+<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span>  <span class="na">markdown=</span><span class="s">"span"</span><span class="nt">&gt;</span>
+...(content in second row, second column)
+<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div></div>
+<p><strong>Result:</strong></p>
+
+<table>
+<colgroup>
+<col width="60%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>To create…</th>
+<th>Use this skill type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+A skill that can handle just about any type of request.
+
+For example:
+
+- Look up information from a web service
+- Integrate with a web service to order something (order a car from Uber, order a pizza from Domino’s Pizza)
+- Interactive games
+- Just about anything else you can think of
+</td>
+<td>
+Custom skill (<em>custom interaction model</em>)
+See <a href="sample3.html">Sample 3</a>
+…(more content…)
+</td>
+</tr>
+<tr>
+<td>
+…(content in second row, first column)
+</td>
+<td>
+…(content in second row, second column)
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>To make life easier, add the following into a template that you can easily trigger through Atom’s snippet feature:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;table&gt;
+   &lt;colgroup&gt;
+      &lt;col width="40%" /&gt;
+      &lt;col width="60%" /&gt;
+   &lt;/colgroup&gt;
+   &lt;thead&gt;
+      &lt;tr&gt;
+         &lt;th&gt;&lt;/th&gt;
+         &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+      &lt;tr&gt;
+         &lt;td&gt;&lt;/td&gt;
+         &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+         &lt;td&gt;&lt;/td&gt;
+         &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+   &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre></div></div>
+
+<h2 id="one-off-styles">One-off Styles</h2>
+
+<p>If you have a need to implement a custom style within your Markdown content, first define the style through some style tags:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+<span class="nc">.special</span> <span class="p">{</span>
+   <span class="nl">font-family</span><span class="p">:</span> <span class="n">Gothic</span><span class="p">;</span>
+   <span class="nl">font-size</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+   <span class="py">font-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<style>
+.special {
+   font-family: "Comic Sans MS";
+   font-size: 40px;
+   color: red;
+   }
+</style>
+
+<p>Then apply the class with this syntax:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{: .special}
+My special class.
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<p class="special">My special class.</p>
+
+<p>You can also use ID tags instead of classes:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{: #special}
+My special class.
+</code></pre></div></div>
+
+<p>You can have an empty line between the class or ID tag (<code class="highlighter-rouge">{: #special}</code>) and the next element. This technique will apply the class or ID attribute on whatever element comes next in your document.</p>
+
+<h2 id="images_section">Images</h2>
+
+<p>To insert an image into your content, use the image.html include template that is set up:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">image</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">file</span><span class="o">=</span><span class="s2">"company_logo.png"</span><span class="w"> </span><span class="na">url</span><span class="o">=</span><span class="s2">"http://developer.company.com"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"My alternative image text"</span><span class="w"> </span><span class="na">caption</span><span class="o">=</span><span class="s2">"This is my caption"</span><span class="w"> </span><span class="na">border</span><span class="o">=</span><span class="s2">"true"</span><span class="w"> </span><span class="na">max-width</span><span class="o">=</span><span class="s2">"90%"</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<figure><a class="noExtIcon" target="_blank" href="http://developer.company.com"><img style="max-width: 90%" class="docimage border" src="images/company_logo.png" alt="My alternative image text" /></a><figcaption>This is my caption</figcaption></figure>
+
+<p>The image include’s properties are as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+      <th>Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">file</code></td>
+      <td>The name of the file (include the file extension)</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>Whether to link the image to a URL</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">alt</code></td>
+      <td>Alternative image text for accessibility and SEO</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">caption</code></td>
+      <td>A caption for the image</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">border</code></td>
+      <td>A border around the image. If you want the border, set this equal to <code class="highlighter-rouge">true</code>. Otherwise omit the parameter.</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">max-width</code></td>
+      <td>You can use px or a percentage, such as <code class="highlighter-rouge">70px</code>.</td>
+      <td>Optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The image template will use the <code class="highlighter-rouge">image_path</code> property when referencing the path to the image.</p>
+
+<p>Store images in the <strong>images</strong> folder in your Jekyll project — these images will be used for your Jekyll output.</p>
+
+<p>Media Central will cache images you upload and expire the cache on an <em>hourly</em> basis. The first time you upload an image to Media Central, you may need to wait a few minutes before it becomes available.</p>
+
+<h2 id="excluding-images-from-translated-builds">Excluding Images from Translated Builds</h2>
+
+<p>If you want to have some images appear only in certain languages, use conditional logic:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">language</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"english"</span><span class="w"> </span><span class="p">%}</span>
+
+<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">image</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">file</span><span class="o">=</span><span class="s2">"company_logo.png"</span><span class="w"> </span><span class="na">url</span><span class="o">=</span><span class="s2">"http://dev.company.com"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"My alternative image text"</span><span class="w"> </span><span class="na">border</span><span class="o">=</span><span class="s2">"true"</span><span class="w"> </span><span class="na">caption</span><span class="o">=</span><span class="s2">"This is my caption"</span><span class="w"> </span><span class="p">%}</span>
+
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<h2 id="inlineimages">Including Inline Images</h2>
+
+<p>For inline images, such as with a button that you want to appear inline with text, use the inline_image.html include, like this:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Click the **Android SDK Manager** button <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">inline_image</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">file</span><span class="o">=</span><span class="s2">"androidsdkmanagericon.png"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"SDK button"</span><span class="w"> </span><span class="na">border</span><span class="o">=</span><span class="s2">"true"</span><span class="w"> </span><span class="na">max-width</span><span class="o">=</span><span class="s2">"90%"</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<p>Click the <strong>Android SDK Manager</strong> button <img style="max-width: 90%" class="inline border" src="images/androidsdkmanagericon.png" alt="SDK button" /></p>
+
+<p>The inline_image.html include properties are as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+      <th>Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">file</code></td>
+      <td>The name of the file (include the file extension)</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">alt</code></td>
+      <td>Alternative image text for accessibility and SEO</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">border</code></td>
+      <td>A border around the image. If you want the border, set this equal to <code class="highlighter-rouge">true</code>. Otherwise omit the parameter.</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">max-width</code></td>
+      <td>A maximum width for the image. You can use px or a percentage, such as <code class="highlighter-rouge">70px</code>.</td>
+      <td>Optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="bold-italics">Bold, Italics</h2>
+
+<p>You can make content <strong>bold</strong> with two asterisks (<code class="highlighter-rouge">**bold**</code>), or <em>italics</em> with one asterisk (<code class="highlighter-rouge">*italics*</code>).</p>
+
+<h2 id="question-and-answer-formatting">Question and Answer formatting</h2>
+
+<p>You can use the following formatting for Q&amp;A pages:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Why is the sky blue?
+:  It's not actually blue. This is an illusion based on the way molecules in our atmosphere reflect light waves.
+
+Why is the ocean blue?
+:   It reflects the color of the atmosphere.
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<dl>
+  <dt>Why is the sky blue?</dt>
+  <dd>It’s not actually blue. This is an illusion based on the way molecules in our atmosphere reflect light waves.</dd>
+  <dt>Why is the ocean blue?</dt>
+  <dd>It reflects the color of the atmosphere.</dd>
+</dl>
+
+<p>If you want to emphasize the question aspect, put a “Q:” before the questions:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Q: Why is the sky blue?
+:  It's not actually blue. This is an illusion based on the way molecules in our atmosphere reflect light waves.
+
+Q: Why is the ocean blue?
+:   It reflects the color of the atmosphere.
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<dl>
+  <dt>Q: Why is the sky blue?</dt>
+  <dd>It’s not actually blue. This is an illusion based on the way molecules in our atmosphere reflect light waves.</dd>
+  <dt>Q: Why is the ocean blue?</dt>
+  <dd>It reflects the color of the atmosphere.</dd>
+</dl>
+
+<p>kramdown outputs this Markdown syntax as a definition list in HTML.</p>
+
+<h2 id="glossary-pages">Glossary Pages</h2>
+
+<p>To list the terms from a glossary, first list the terms in a YAML data file inside the <strong>_data</strong> folder, like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-
+  term: macabre
+  def: ghastly, horrifying, resembling death
+
+-
+  term: riparian
+  def: on the bank by a river
+</code></pre></div></div>
+
+<p>Supposing the glossary file were named <strong>glossary.yml</strong>, you could list out the terms like this:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">glossaryTerms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">glossary</span><span class="w"> </span><span class="p">%}</span>
+
+&lt;dl&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>entry<span class="w"> </span>in<span class="w"> </span>glossaryTerms<span class="w"> </span><span class="p">%}</span>
+    &lt;dt id="<span class="p">{{</span><span class="nv">entry</span><span class="p">.</span><span class="nv">term</span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="nv">entry</span><span class="p">.</span><span class="nv">term</span><span class="p">}}</span>&lt;/dt&gt;
+    &lt;dd&gt;<span class="p">{{</span><span class="nv">entry</span><span class="p">.</span><span class="nv">def</span><span class="p">}}</span>&lt;/dd&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/dl&gt;
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<dl>
+    
+    <dt></dt>
+    <dd></dd>
+    
+    <dt></dt>
+    <dd></dd>
+    
+</dl>
+
+<p>The terms will be sorted according to their order in the glossary.yml file, so you have to manually alphabetize the terms. (Liquid’s <code class="highlighter-rouge">sort</code> filter doesn’t mix capitalized and lowercased terms when alphabetizing items, so you can’t use it here unless you only have lowercase or only have uppercase terms.)</p>
+
+<p>Each definition term will have an ID tag (based on <code class="highlighter-rouge">id="{{entry.term}}</code> in the previous code). If you want to link to this term, add each glossary term to the <code class="highlighter-rouge">bookmarks</code> property in your glossary entry in your sidebar navigation. For example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Glossary</span>
+      <span class="na">jurl</span><span class="pi">:</span> <span class="s">/glossary.html</span>
+      <span class="na">hurl</span><span class="pi">:</span> <span class="s">/solutions/devices/glossary</span>
+      <span class="na">ref</span><span class="pi">:</span> <span class="s">glossary</span>
+      <span class="na">bookmarks</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">mcabre</span><span class="pi">,</span> <span class="nv">riperian</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>Then make links in your content like this:</p>
+
+<p><strong>Result:</strong></p>
+
+<p>For more information, see [Riperian][glossary#riperian].</p>
+
+<h2 id="tooltips">Tooltips</h2>
+
+<p>You can leverage your glossary for tooltips by using the tooltips.html include. Here’s an example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The setting was {% include tooltips.html term="riperian" capitalize="true" %} to say the least.
+
+I cannot believe she described this canal trail as {% include tooltips.html term="riperian" %} in the book.
+</code></pre></div></div>
+
+<p><strong>Result:</strong></p>
+
+<p>The setting was <a data-toggle="tooltip" title="on the bank by a river">Riparian</a>
+ to say the least.</p>
+
+<p>I cannot believe she described this canal trail as <a data-toggle="tooltip" title="on the bank by a river">riparian</a>
+ in the book.</p>
+
+<p>By default, the glossary term is lower-cased. If you want it capitalized, add a <code class="highlighter-rouge">capitalize="true"</code> parameter in the include syntax.</p>
+
+<p>Note the following about links and formatting in the tooltips.yml file:</p>
+
+<ul>
+  <li>You can’t add hyperlinks in YAML content using the approach for automated links (such as <code class="highlighter-rouge">[jekyllhowto-publishing][jekyllhowto-publishing]</code>), but you can directly code HTML links here.</li>
+  <li>In your link formatting, use single quotes instead of double quotes. For example, <code class="highlighter-rouge">&lt;a href='https://en.wikipedia.org/wiki/River'&gt;River in Wikipedia&lt;/a&gt;</code>.</li>
+  <li>For multiple paragraphs, use <code class="highlighter-rouge">&lt;p&gt;</code> tags. Other HTML formatting is also allowed.</li>
+  <li>You can’t use includes or variables in your glossary.yml file.</li>
+  <li>Enclose the <code class="highlighter-rouge">def</code> values in quotation marks to avoid conflicts with colons, which are illegal characters in YAML syntax. For quotation marks inside quotations, escape them <code class="highlighter-rouge">/"like this/"</code>.</li>
+</ul>
+
+<p>To implement the tooltip on a page, reference it through the tooltips.html include:</p>
+
+<p>The parameters of the tooltips include are as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameters</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>term</td>
+      <td>The glossary term in the glossary.yml file</td>
+    </tr>
+    <tr>
+      <td>capitalize</td>
+      <td>Include only if you want the term capitalized. If so, set it equal to <code class="highlighter-rouge">true</code> and treat as a string. (A capitalization filter gets placed on the glossary term.) If you omit the term, no capitalization filter gets applied to the term. If the term is capitalized, you don’t need to also apply this filter.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="navtabs">Navtabs</h2>
+
+<p>You can implement nav tabs when you have different code samples or instructions based on programming languages or platforms, and you want to put the information in a more compressed space. Here’s the HTML code:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"profileTabs"</span> <span class="na">class=</span><span class="s">"nav nav-tabs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"noExtIcon"</span> <span class="na">href=</span><span class="s">"#firsttab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>First Tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">"noExtIcon"</span> <span class="na">href=</span><span class="s">"#secondtab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Second Tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">"noExtIcon"</span> <span class="na">href=</span><span class="s">"#thirdtab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Third Tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">"noExtIcon"</span> <span class="na">href=</span><span class="s">"#fourthtab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Fourth Tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tab-content"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane active"</span> <span class="na">id=</span><span class="s">"firsttab"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"subheading"</span><span class="nt">&gt;</span>First Tab
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<span class="nt">&lt;/p&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"secondtab"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"subheading"</span><span class="nt">&gt;</span>Second tab
+    <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"thirdtab"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"subheading"</span><span class="nt">&gt;</span>Third tab
+    <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"fourthtab"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"subheading"</span><span class="nt">&gt;</span>Fourth Tab
+    <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+</code></pre></div></div>
+
+<p><strong>Result</strong>:</p>
+
+<ul id="profileTabs" class="nav nav-tabs">
+  <li class="active"><a class="noExtIcon" href="#firsttab" data-toggle="tab">First Tab</a></li>
+  <li><a class="noExtIcon" href="#secondtab" data-toggle="tab">Second Tab</a></li>
+  <li><a class="noExtIcon" href="#thirdtab" data-toggle="tab">Third Tab</a></li>
+  <li><a class="noExtIcon" href="#fourthtab" data-toggle="tab">Fourth Tab</a></li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="firsttab">
+    <div class="subheading">First Tab
+    </div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="secondtab">
+    <div class="subheading">Second tab
+    </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="thirdtab">
+    <div class="subheading">Third tab
+    </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+   </div>
+  <div role="tabpanel" class="tab-pane" id="fourthtab">
+    <div class="subheading">Fourth Tab
+    </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  </div>
+</div>
+
+<p>Note the following:</p>
+
+<ul>
+  <li>If you’re adding more tabs, be sure to customize the <code class="highlighter-rouge">id</code> value for each <code class="highlighter-rouge">tabpanel</code> div to match up with the <code class="highlighter-rouge">href</code> value for the list item (<code class="highlighter-rouge">li</code>) classes. In this code, you can see that <code class="highlighter-rouge">firsttab</code> in the href value matches up with the <code class="highlighter-rouge">firsttab</code> value for the div with the <code class="highlighter-rouge">tab-pane</code> class.</li>
+  <li>You can use Markdown instead of HTML inside the <code class="highlighter-rouge">&lt;div role="tabpanel" class="tab-pane active" id="profile" markdown="block"&gt;</code> by adding <code class="highlighter-rouge">markdown="block"</code> as an attribute. This tells kramdown to process the content as block level element with Markdown. If you just want a span element, use <code class="highlighter-rouge">markdown="span"</code>.</li>
+  <li>Don’t use heading levels (such as <code class="highlighter-rouge">h2</code>) within the tabs. If you do, the heading levels will appear in the mini-TOC and the links won’t jump to anywhere. Instead, use a <code class="highlighter-rouge">subheading</code> class on a <code class="highlighter-rouge">div</code> tag as shown in the example.</li>
+  <li>You can store the tab content in a separate file and pull it in. For example, you might store the tab content for the first tab in a file called firsttab.yml. Store this tab in the same directory as your file with the navtab. Now reference the content with this: <code class="highlighter-rouge">{% include_relative firsttab.yml %}</code>.</li>
+</ul>
+
+<p>If you have a code sample inside a navtab, put the code flush against the left edge and inside a surrounding element that specifies <code class="highlighter-rouge">markdown="block"</code>. Here’s an example:</p>
+
+<pre>
+&lt;p markdown="block"&gt;
+
+&#96;&#96;&#96;json
+"notificationInfo": {
+        "notificationType": "OrderPlacedNotification",
+        "lwaClientId": "amzn1.application-oa2-client.6b68exxxxxxxxxx9",
+        "notificationTime": "2016-12-02T21:09:58.689Z",
+        "notificationId": "amzn1.dash.notification.v1.xxxxxxxxxxxxx13",
+        "version": "2015-06-05"
+    }
+&#96;&#96;&#96;
+
+&lt;/p&gt;
+</pre>
+
+<h2 id="workflow-maps">Workflow Maps</h2>
+
+<p>You can include a simple linear workflow map that has squares at the top depicting a process. Add the following in your page’s frontmatter:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">simple_map</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">map_name</span><span class="pi">:</span> <span class="s">&lt;filename.html&gt;</span>
+</code></pre></div></div>
+
+<p>Inside the _includes folder (create one if you don’t have one), create the referenced map_name file and follow this format:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div id="userMap"&gt;
+&lt;div class="content"&gt;&lt;a href="file-1.html"&gt;&lt;div class="box box1"&gt;&lt;span class="stepName"&gt;STEP 1:&lt;/span&gt; &lt;br/&gt;Download the Project&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class="arrow"&gt;→&lt;/div&gt;
+&lt;div class="content"&gt;&lt;a href="file-2.html"&gt;&lt;div class="box box2"&gt;&lt;span class="stepName"&gt;STEP 2:&lt;/span&gt;&lt;br/&gt;Configure the Settings&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class="arrow"&gt;→&lt;/div&gt;
+&lt;div class="content"&gt;&lt;a href="file-3.html"&gt;&lt;div class="box box3"&gt;&lt;span class="stepName"&gt;STEP 3:&lt;/span&gt;&lt;br/&gt;Run the Installer&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<p>Customize the text and links that you want. Note that you can’t use automated links here. You have to hard-code the links in HTML.</p>
+
+<p>Also note that you can’t have too many workflow squares (the max is 5-6).</p>
+
+<!-- left blank intentionally. intended to be overwritten in custom projects. -->
+
+
+                  
+
+                    
+
+
+
+            </div>
+        </div><!--/.container-->
+
+
+    </div><!--/.page-container-->
+    <!-- * Bootsnipp footer: http://bootsnipp.com/snippets/1KEEq (MIT license) -->
+
+<div class="footertop">
+    <div class="container">
+        <div class="col-md-6">
+            <p></p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-6 footerleft ">
+
+
+              
+                        <div class="logofooter"> About Amazon Pay</div>
+                <p class="footer-description">2018 Amazon Payments, Inc. or its affiliates Amazon Payments, Inc. | 410 Terry Ave N | Seattle, Washington 98109-5210 Customer agreement and policies Transaction and account security  Privacy notice File a complaint Internet scams and phishing Money Transmitter License 
+</p>
+
+            </div>
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7">Amazon Pay</h6>
+                <ul class="footer-ul">
+                  
+                    <li><a class="noExtIcon" href="http://someurl1.com"> Press</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl2.com"> Support</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Contact Us</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Jobs</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</footer>
+<!--subfooter start from here -->
+
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            <p>© 2018 Amazon Payments, Inc. or its affiliates</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+
+</body>
+
+</html>
